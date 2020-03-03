@@ -1,0 +1,14 @@
+<h2>Edit a chore</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+    <%= simple_form_for @room_chore do |f| %>
+    <%= f.input :status  %>
+    <%= f.input :notes  %>
+    <%= f.input :period  %>
+    <%= f.button :submit %>
+    <% end %>
+    </div>
+  </div>
+</div>
+
