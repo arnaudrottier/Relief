@@ -1,2 +1,29 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: url(<%= image_path('background.jpg') %>);" width: 100%>
+  <div class="search-form" >
+    <div class= "header">
+      <p>Find me in app/views/pages/home.html.erb</p>
+      <h1>Join our community</h1>
+    </div>
+    <div class="container">
+        <div class="row">
+        <div class="col-6 text-left">
+            <div class="previous">
+              <button type="button" class="btn btn-default btn-lg">
+                  <span class="glyphicon glyphicon-chevron-left">
+                    <p>Bonjour!</p>
+                  </span>
+              </button>
+            </div>
+        </div>
+        <div class="col-6 text-right">
+            <div class="next">
+              <button type="button" class="btn btn-default btn-lg">
+                  <span class="glyphicon glyphicon-chevron-right"></span>
+                  <p>Bonjour 2</p>
+              </button>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
