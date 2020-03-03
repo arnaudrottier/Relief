@@ -2,9 +2,9 @@
   <div class="row">
     <div class="col-6">
       <% @chores.each do |chore| %>
-      <%= chore.name %>
-      <%= chore.description %>
-      <%= chore.frequency %>
+     <h2><%= chore.name %></h2>
+     <p><%= chore.description %></p>
+       <p><%= chore.frequency %></p>
       <% end %>
     </div>
   </div>
