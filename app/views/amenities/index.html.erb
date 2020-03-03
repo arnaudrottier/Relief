@@ -1,0 +1,10 @@
+<div class="content">
+  <div>
+    <div class="text-left m-3 p-2"><strong>Amenities</strong></div>
+    <div class="cards">
+        <% @amenities.each do |amenity|  %>
+        <%= render "card", amenity: amenity %>
+        <% end %>
+  </div>
+
+</div>
