@@ -46,10 +46,12 @@ end
 
 6.times do |n|
   Chore.all.each_with_index do |chore, index|
-    RoomChore.create!(
+    room_chore = RoomChore.new(
       chore: chore,
       period: n + 1,
-      room: Room.all[index + n % 6]
+      room: Room.all[(index + n) % 6]
     )
+      # binding.pry
+      room_chore.save!
   end
 end
