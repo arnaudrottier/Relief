@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_03_055931) do
+ActiveRecord::Schema.define(version: 2020_03_03_073206) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2020_03_03_055931) do
   create_table "chores", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.interval "frequency"
+    t.interval "frequency", default: "168:00:00"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -46,10 +46,9 @@ ActiveRecord::Schema.define(version: 2020_03_03_055931) do
     t.bigint "room_id"
     t.bigint "chore_id"
     t.text "notes"
-    t.date "start_date"
-    t.date "end_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "period"
     t.index ["chore_id"], name: "index_room_chores_on_chore_id"
     t.index ["room_id"], name: "index_room_chores_on_room_id"
   end
