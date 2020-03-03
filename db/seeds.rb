@@ -39,19 +39,17 @@ chores = [
   }
 ]
 
-chores.count.times do |n|
-  Room.create(number: n + 1)
+chores.each_with_index do |chore, index|
+  new_chore = Chore.create!(chore)
+  new_room = Room.create!(number: index + 1)
 end
 
-Chore.create(chores)
-
-chores.count.times do |n|
-  RoomChore.create(
-  {
-    room: Room.all[n],
-    chore: Chore.all[n],
-    period:
-  })
+6.times do |n|
+  Chore.all.each_with_index do |chore, index|
+    RoomChore.create!(
+      chore: chore,
+      period: n + 1,
+      room: Room.all[index + n % 6]
+    )
+  end
 end
-
-room_chores = []
