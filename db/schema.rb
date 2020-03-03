@@ -10,10 +10,55 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_02_091608) do
+ActiveRecord::Schema.define(version: 2020_03_03_055931) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "amenities", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "availability"
+  end
+
+  create_table "bookings", force: :cascade do |t|
+    t.bigint "amenity_id"
+    t.time "start_time"
+    t.time "end_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "room_id"
+    t.index ["amenity_id"], name: "index_bookings_on_amenity_id"
+    t.index ["room_id"], name: "index_bookings_on_room_id"
+  end
+
+  create_table "chores", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.interval "frequency"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "room_chores", force: :cascade do |t|
+    t.boolean "status", default: false
+    t.bigint "room_id"
+    t.bigint "chore_id"
+    t.text "notes"
+    t.date "start_date"
+    t.date "end_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chore_id"], name: "index_room_chores_on_chore_id"
+    t.index ["room_id"], name: "index_room_chores_on_room_id"
+  end
+
+  create_table "rooms", force: :cascade do |t|
+    t.integer "number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +68,24 @@ ActiveRecord::Schema.define(version: 2020_03_02_091608) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "avatar"
+    t.bigint "room_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["room_id"], name: "index_users_on_room_id"
   end
 
+  create_table "whiteboard_messages", force: :cascade do |t|
+    t.text "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "bookings", "amenities"
+  add_foreign_key "bookings", "rooms"
+  add_foreign_key "room_chores", "chores"
+  add_foreign_key "room_chores", "rooms"
+  add_foreign_key "users", "rooms"
 end
