@@ -1,2 +1,13 @@
-<h1>Pages#home</h1>
-<%= link_to "index page", chores_path %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path('background.jpg') %>);" width: 100%>
+  <div class="search-form" >
+    <div class= "header">
+      <h1>Relief</h1>
+      <p>Manage your shared housing today</p>
+    </div>
+    <div class="container">
+      <div class="row justify-content-center">
+            <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+</div>
