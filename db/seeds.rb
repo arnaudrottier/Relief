@@ -7,8 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "Destroying Rooms and Chores"
-Room.destroy_all
+RoomChore.destroy_all
 Chore.destroy_all
+Room.destroy_all
 puts "Destroyed Rooms and Chores"
 
 
@@ -55,3 +56,11 @@ end
       room_chore.save!
   end
 end
+
+user = User.new(
+  email: "richlynch2@gmail.com",
+  password: "123456",
+)
+user.save!
+
+puts "created rooms, room_chores, and chores"
