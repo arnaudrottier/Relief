@@ -75,5 +75,4 @@ end
   end
 end
 
-
 puts "created rooms, room_chores, and chores"
