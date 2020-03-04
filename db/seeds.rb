@@ -48,6 +48,8 @@ end
 6.times do |n|
   Chore.all.each_with_index do |chore, index|
     room_chore = RoomChore.new(
+      start_date: Date.new(2020,3,9),
+      end_date: Date.new(2020,3,15),
       chore: chore,
       period: n + 1,
       room: Room.all[(index + n) % 6]
