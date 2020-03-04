@@ -1,17 +1,25 @@
-      <% @chores.each do |chore| %>
-<div class="container">
-  <div class="row">
-    <div class="col-6" >
-      <div class="">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <%= chore.name %>
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item">description: <%= chore.description %></a>
-          <a class="dropdown-item">frequency: <%= chore.frequency %></a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-      <% end %>
+
+
+<table>
+  <thead>
+    <th></th>
+    <% @room_chores.sort_by { |room_chore| room_chore.room.number }.each do |room_chore| %>
+    <th><%= room_chore.room.number %></th>
+    <% end %>
+  </thead>
+  <tbody>
+   <% @room_chores.each do |room_chore| %>
+   <tr>
+    <th><%= room_chore.chore.name %></th>
+    <% @rooms.each do |room| %>
+    <td><%= "X" if room == room_chore.room %></td>
+      <!-- <%# if room == room_chore.room %>
+      <td>X</td>
+      <%# else  %>
+      <td></td>
+      <%# end %> -->
+    <% end %>
+  </tr>
+  <% end %>
+</tbody>
+</table>
