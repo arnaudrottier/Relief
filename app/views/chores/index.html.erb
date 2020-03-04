@@ -1,11 +1,17 @@
+      <% @chores.each do |chore| %>
 <div class="container">
   <div class="row">
-    <div class="col-6">
-      <% @chores.each do |chore| %>
-     <h2><%= chore.name %></h2>
-     <p><%= chore.description %></p>
-       <p><%= chore.frequency %></p>
-      <% end %>
+    <div class="col-6" >
+      <div class="">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <%= chore.name %>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item">description: <%= chore.description %></a>
+          <a class="dropdown-item">frequency: <%= chore.frequency %></a>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+      <% end %>
