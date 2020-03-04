@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2020_03_03_073206) do
     t.interval "frequency", default: "168:00:00"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "period"
   end
 
   create_table "room_chores", force: :cascade do |t|
