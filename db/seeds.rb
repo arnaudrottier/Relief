@@ -7,10 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "Destroying Users, Rooms and Chores"
+User.destroy_all
 RoomChore.destroy_all
 Chore.destroy_all
 Room.destroy_all
-User.destroy_all
 puts "Destroyed Users, Rooms and Chores"
 
 
@@ -74,6 +74,5 @@ end
       room_chore.save!
   end
 end
-
 
 puts "created rooms, room_chores, and chores"

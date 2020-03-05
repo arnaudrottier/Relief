@@ -1,0 +1,4 @@
+<li><%= message.message %></li>
+      <% if message.image.attached? %>
+    <li><%= cl_image_tag(message.image.key, crop: :fill) %></li>
+      <% end %>

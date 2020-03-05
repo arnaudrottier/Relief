@@ -1,0 +1,11 @@
+<%= simple_form_for(@whiteboard_message) do |f| %>
+  <%= f.input :message %>
+  <%= f.input :image %>
+  <%= f.submit "Submit", class: "btn btn-dark" %>
+<% end %>
+
+<ul class="my-3">
+  <% @messages.each do |message|%>
+    <%= render 'whiteboard_messages/message_card', message: message %>
+  <% end %>
+</ul>

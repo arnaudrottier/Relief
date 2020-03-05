@@ -1,4 +1,10 @@
-<h1>Houses#show</h1>
-<p>Find me in app/views/houses/show.html.erb</p>
-
-
+<div class="container col-3">
+<div class="text-left m-3 p-2"><strong>Message log</strong></div>
+  <div class="cards">
+  </div>
+  <div class="card my-3">
+    <div class="text-left m-3 p-2">
+    <%= render 'whiteboard_messages/index', whiteboard_message: @whiteboard_message %>
+    </div>
+  </div>
+</div>
