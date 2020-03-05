@@ -1,3 +1,5 @@
+require "open-uri"
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -50,16 +52,30 @@ emails = [
   "tmoney@gmail.com",
 ]
 
+first_names = [
+  "Richie Ratchet",
+  "Billy Boy",
+  "Arnaldo",
+  "Orangina",
+  "Ralphie",
+  "Trouni Baby",
+]
+
 chores.each_with_index do |chore, index|
   new_chore = Chore.create!(chore)
   new_room = Room.create!(number: index + 1)
   user = User.new(
     email: emails[index],
+    first_name: first_names[index],
     password: "123456",
     room: new_room
   )
+  file = File.open("app/assets/images/user_photo.jpg")
+  user.image.attach(io: file, filename: 'user.jpg', content_type: 'image/jpg')
   user.save!
 end
+
+
 
 6.times do |n|
   Chore.all.each_with_index do |chore, index|
