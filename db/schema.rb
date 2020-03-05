@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_05_032052) do
+ActiveRecord::Schema.define(version: 2020_03_05_110304) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,7 +63,6 @@ ActiveRecord::Schema.define(version: 2020_03_05_032052) do
   end
 
   create_table "room_chores", force: :cascade do |t|
-    t.boolean "status", default: false
     t.bigint "room_id"
     t.bigint "chore_id"
     t.text "notes"
@@ -72,6 +71,7 @@ ActiveRecord::Schema.define(version: 2020_03_05_032052) do
     t.integer "period"
     t.date "start_date"
     t.date "end_date"
+    t.string "status", default: "pending"
     t.index ["chore_id"], name: "index_room_chores_on_chore_id"
     t.index ["room_id"], name: "index_room_chores_on_room_id"
   end
