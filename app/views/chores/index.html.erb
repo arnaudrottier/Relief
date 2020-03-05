@@ -6,22 +6,21 @@
             <thead>
               <th></th>
               <% @room_chores.sort_by { |room_chore| room_chore.room.number }.each do |room_chore| %>
-              <th><h3 class="d-flex justify-content-center"><%= room_chore.room.number %></h3></th>
+              <th><h3 class="d-flex justify-content-center my-3"><%= room_chore.room.number %></h3></th>
               <% end %>
             </thead>
               <tbody>
               <% @room_chores.each do |room_chore| %>
               <tr>
-                <th class="card-chore-name border-bottom" tabindex="0" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="top" data-content=" <%= room_chore.chore.description %> ">
+                <th class="card-chore-name" tabindex="0" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="top" data-content=" <%= room_chore.chore.description %> ">
                 <%= room_chore.chore.name %>
                 </th>
                 <% @rooms.each do |room| %>
-                <td class="border-bottom"><%= "X" if room == room_chore.room %></td>
-                  <!-- <%# if room == room_chore.room %>
-                  <td>X</td>
-                  <%# else  %>
+                  <% if room == room_chore.room %>
+                  <td><i class="fas fa-circle d-flex justify-content-center"></i></td>
+                  <% else  %>
                   <td></td>
-                  <%# end %> -->
+                  <% end %>
                 <% end %>
               </tr>
               <% end %>
