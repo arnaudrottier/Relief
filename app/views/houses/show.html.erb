@@ -1,65 +1,51 @@
-<<<<<<< HEAD
 <div class="container">
   <div class="row justify-content-center my-5">
-    <h1>Greeting Message / Weather Display</h1>
+    <h1>Welcome <%= current_user.first_name %>! / Weather Display</h1>
   </div>
   <div class="row justify-content-center my-5">
     <div class="col-6">
       <div class="card">
-        <div class="card-header">
+        <div class="card-header text-center">
           <h4>Amenities</h4>
         </div>
         <div class="card-body">
-          <%  %>
-          <li></li>
-          <% end %>
         </div>
       <a href="#" class="stretched-link"></a>
       </div>
     </div>
     <div class="col-6">
       <div class="card">
-        <div class="card-header">
+        <div class="card-header text-center">
           <h4>Chores</h4>
         </div>
         <div class="card-body">
           <% @room_chores.each do |room_chore| %>
-          <li><%= room.chore.name %> : <%= room_chore.status %></li>
+            <li><%= room_chore.chore.name %> : <%= room_chore.start_date %> - <%= room_chore.end_date %> |
+              <% if room_chore.status == true %>
+                <i class="fas fa-check"></i>
+              <% else %>
+                <i class="fas fa-times"></i>
+              <% end %>
+            </li>
           <% end %>
+          <a href="chores" class="stretched-link"></a>
         </div>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
       </div>
     </div>
   </div>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <div class="row">
-
-  </div>
-
-
-=======
-<div class="container col-3">
-<div class="text-left m-3 p-2"><strong>Message log</strong></div>
-  <div class="cards">
-  </div>
-  <div class="card my-3">
-    <div class="text-left m-3 p-2">
-    <%= render 'whiteboard_messages/index', whiteboard_message: @whiteboard_message %>
+<div class="container col-6">
+  <div class="card">
+    <div class="card-header">
+      <div class="text-left m-3 p-2">
+        <strong>Whiteboard</strong>
+      </div>
+    </div>
+    <div class="card-body my-3">
+      <div class="text-left m-3 p-2">
+        <%= render 'whiteboard_messages/index', whiteboard_message: @whiteboard_message %>
+      </div>
     </div>
   </div>
 </div>
->>>>>>> ba8f5f70a76762495e4148a24a9e3ed2f1fb3e1f
