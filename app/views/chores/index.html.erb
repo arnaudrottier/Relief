@@ -1,3 +1,15 @@
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center my-0" >
+    <li class="page-item disabled">
+    </li>
+    <li class="page-item"><a class="page-link" href="#">Last week</a></li>
+    <li class="page-item"><a class="page-link" href="#">This week</a></li>
+    <li class="page-item"><a class="page-link" href="#">Next week</a></li>
+    <li class="page-item">
+    </li>
+  </ul>
+</nav>
+
 <div class="d-flex justify-content-center">
   <div class="container-chore">
     <div class="row">
@@ -6,25 +18,13 @@
             <thead>
               <th></th>
               <% @room_chores.sort_by { |room_chore| room_chore.room.number }.each do |room_chore| %>
-              <th><h3 class="d-flex justify-content-center"><%= room_chore.room.number %></h3></th>
+              <th><h3 class="d-flex justify-content-center my-3"><%= room_chore.room.number %></h3></th>
               <% end %>
             </thead>
               <tbody>
-              <% @room_chores.each do |room_chore| %>
-              <tr>
-                <th class="card-chore-name border-bottom" tabindex="0" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="top" data-content=" <%= room_chore.chore.description %> ">
-                <%= room_chore.chore.name %>
-                </th>
-                <% @rooms.each do |room| %>
-                <td class="border-bottom"><%= "X" if room == room_chore.room %></td>
-                  <!-- <%# if room == room_chore.room %>
-                  <td>X</td>
-                  <%# else  %>
-                  <td></td>
-                  <%# end %> -->
+                <% @room_chores.each do |room_chore| %>
+                  <%= render "room_chores/table_row", room_chore: room_chore %>
                 <% end %>
-              </tr>
-              <% end %>
               </tbody>
           </table>
       </div>
