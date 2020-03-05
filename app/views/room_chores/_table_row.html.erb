@@ -1,0 +1,31 @@
+<tr>
+  <th class="card-chore-name" tabindex="0" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="top" data-content=" <%= room_chore.chore.description %> ">
+  <%= room_chore.chore.name %>
+  </th>
+  <% @rooms.each do |room| %>
+    <!-- if we want to put a marker in the box -->
+    <% if room == room_chore.room %>
+      <td>
+        <% if room_chore.user == current_user && room_chore.status %>
+          <!-- if chore_room belongs to user && if the chore is completed -->
+          <%= link_to edit_room_chore_path(room_chore) do %>
+            <i class="far fa-calendar-check d-flex justify-content-center"></i>
+          <% end %>
+        <% elsif room_chore.status %>
+          <!-- if the chore is completed -->
+          <i class="far fa-calendar-check d-flex justify-content-center"></i>
+        <% elsif room_chore.user == current_user %>
+          <!-- if chore_room belongs to user && if the chore is NOT completed -->
+          <%= link_to edit_room_chore_path(room_chore) do %>
+            <i class="far fa-calendar-times d-flex justify-content-center"></i>
+          <% end %>
+        <% else %>
+          <!-- if the chore is NOT completed -->
+          <i class="far fa-calendar-times d-flex justify-content-center"></i>
+        <% end %>
+      </td>
+    <% else  %>
+      <td></td>
+    <% end %>
+  <% end %>
+</tr>
