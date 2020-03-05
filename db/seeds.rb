@@ -52,11 +52,21 @@ emails = [
   "tmoney@gmail.com",
 ]
 
+first_names = [
+  "Richie Ratchet",
+  "Billy Boy",
+  "Arnaldo",
+  "Orangina",
+  "Ralphie",
+  "Trouni Baby",
+]
+
 chores.each_with_index do |chore, index|
   new_chore = Chore.create!(chore)
   new_room = Room.create!(number: index + 1)
   user = User.new(
     email: emails[index],
+    first_name: first_names[index],
     password: "123456",
     room: new_room
   )
