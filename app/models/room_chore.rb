@@ -7,3 +7,7 @@ class RoomChore < ApplicationRecord
     room.user
   end
 end
+
+def completed?
+  status == "completed"
+end
