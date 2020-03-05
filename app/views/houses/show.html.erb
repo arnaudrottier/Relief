@@ -21,7 +21,7 @@
         <div class="card-body">
           <% @room_chores.each do |room_chore| %>
             <li><%= room_chore.chore.name %> : <%= room_chore.start_date %> - <%= room_chore.end_date %> |
-              <% if room_chore.status == true %>
+              <% if room_chore.status %>
                 <i class="fas fa-check"></i>
               <% else %>
                 <i class="fas fa-times"></i>

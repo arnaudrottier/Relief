@@ -3,7 +3,7 @@
 
 <div class="tab d-flex justify-content-center">
   <button class="tablinks" onclick="openWeek(event, 'last')">Last week</button>
-  <button class="tablinks" onclick="openWeek(event, 'this')">This week</button>
+  <button class="tablinks" onclick="openWeek(event, 'this')"id="defaultOpen">This week</button>
   <button class="tablinks" onclick="openWeek(event, 'next')">Next week</button>
 </div>
 
@@ -93,7 +93,9 @@ function openWeek(evt, cityName) {
   }
   document.getElementById(cityName).style.display = "block";
   evt.currentTarget.className += " active";
-}
+  }
+  document.getElementById("defaultOpen").click();
+
 </script>
 
 </body>
