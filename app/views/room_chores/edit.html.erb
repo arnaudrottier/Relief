@@ -1,14 +1,15 @@
-<h2>Edit a chore</h2>
-<div class="container">
-  <div class="row">
-    <div class="col-6">
-    <%= simple_form_for @room_chore do |f| %>
-    <%= f.input :status  %>
-    <%= f.input :notes  %>
-    <%= f.input :period  %>
-    <%= f.button :submit %>
-    <% end %>
+<div class="d-flex justify-content-center">
+  <div class="container-chore mt-3">
+    <div class="row">
+      <div class="col-12">
+      <h2 class="d-flex justify-content-center">Task completed?</h2>
+      <%= simple_form_for @room_chore do |f| %>
+      <%= f.input :status %>
+      <%= f.input :notes  %>
+      <%= f.input :period  %>
+      <button><%= f.button :submit %></button>
+      <% end %>
+      </div>
     </div>
   </div>
 </div>
-
