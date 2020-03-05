@@ -1,11 +1,13 @@
 class WhiteboardMessagesController < ApplicationController
 
   def create
-    @message = WhiteboardMessage.new(whiteboard_messages_params)
-    if @message.save
+    @room_chores = current_user.room.room_chores
+    @messages = WhiteboardMessage.all
+    @whiteboard_message = WhiteboardMessage.new(whiteboard_messages_params)
+    if @whiteboard_message.save
       redirect_to my_house_path
     else
-      render 'houses/show'
+      render "houses/show"
     end
   end
 
