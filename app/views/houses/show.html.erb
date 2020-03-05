@@ -1,4 +1,52 @@
-<h1>Houses#show</h1>
-<p>Find me in app/views/houses/show.html.erb</p>
+<div class="container">
+  <div class="row justify-content-center my-5">
+    <h1>Greeting Message / Weather Display</h1>
+  </div>
+  <div class="row justify-content-center my-5">
+    <div class="col-6">
+      <div class="card">
+        <div class="card-header">
+          <h4>Amenities</h4>
+        </div>
+        <div class="card-body">
+          <%  %>
+          <li></li>
+          <% end %>
+        </div>
+      <a href="#" class="stretched-link"></a>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="card">
+        <div class="card-header">
+          <h4>Chores</h4>
+        </div>
+        <div class="card-body">
+          <% @room_chores.each do |room_chore| %>
+          <li><%= room.chore.name %> : <%= room_chore.status %></li>
+          <% end %>
+        </div>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="row">
+
+  </div>
 
 
