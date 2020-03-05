@@ -12,7 +12,7 @@ class WhiteboardMessagesController < ApplicationController
   private
 
   def whiteboard_messages_params
-    params.require(:whiteboard_message).permit(:message)
+    params.require(:whiteboard_message).permit(:message, :image)
   end
 
 end
