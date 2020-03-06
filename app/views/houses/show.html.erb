@@ -31,6 +31,24 @@
           </li>
         <% end %>
         <a href="chores" class="stretched-link"></a>
+        
+    <div class="col-6">
+      <div class="card">
+        <div class="card-header text-center">
+          <h4>Chores</h4>
+        </div>
+        <div class="card-body">
+          <% @room_chores.each do |room_chore| %>
+            <li><%= room_chore.chore.name %> : <%= room_chore.start_date %> - <%= room_chore.end_date %> |
+              <% if room_chore.status %>
+                <i class="fas fa-check"></i>
+              <% else %>
+                <i class="fas fa-times"></i>
+              <% end %>
+            </li>
+          <% end %>
+          <a href="chores" class="stretched-link"></a>
+        </div>
       </div>
     </div>
   </div>
