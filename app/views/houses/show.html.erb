@@ -13,7 +13,7 @@
   </div>
 
   <div class="row justify-content-center my-3">
-    <div class="card" id="amenities">
+    <div class="card wide-container">
       <div class="card-header text-center">
         <h4>Amenities Booked</h4>
         <a href="amenities" class="stretched-link"></a>
@@ -24,7 +24,7 @@
   </div>
 
   <div class="row justify-content-center my-3">
-    <div class="card" id="chores">
+    <div class="card wide-container">
       <div class="card-header text-center">
         <h4>Your Chores</h4>
         <a href="chores" class="stretched-link"></a>
@@ -40,6 +40,7 @@
             <strong><%= room_chore.chore.name %></strong> : <%= room_chore.start_date.strftime("%b %d") %> - <%= room_chore.end_date.strftime("%b %d") %>
           </li>
         <% end %>
+        <a href="chores" class="stretched-link"></a>
       </div>
     </div>
   </div>
