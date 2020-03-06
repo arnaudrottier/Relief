@@ -8,12 +8,14 @@ require "open-uri"
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-puts "Destroying Users, Rooms and Chores"
+puts "Destroying Users, Rooms, Chores and Amenities"
 User.destroy_all
 RoomChore.destroy_all
 Chore.destroy_all
 Room.destroy_all
-puts "Destroyed Users, Rooms and Chores"
+Booking.destroy_all
+Amenity.destroy_all
+puts "Destroyed Users, Rooms, Chores and Amenities"
 
 
 chores = [
@@ -61,6 +63,52 @@ first_names = [
   "Trouni Baby",
 ]
 
+amenities = [
+  {
+    name:'Iron',
+    availability: false,
+    fa_class: 'fas fa-paper-plane'
+  },
+  {
+    name:'Vacuum',
+    availability: true,
+    fa_class: 'fas fa-broom'
+  },
+  {
+    name:'Shower',
+    availability: false,
+    fa_class: 'fas fa-bath'
+  },
+  {
+    name:'Dryer',
+    availability: false,
+    fa_class: 'fas fa-tint-slash'
+
+  },
+  {
+    name:'Washing Machine',
+    availability: true,
+    fa_class: 'fas fa-tint'
+  },
+  {
+    name:'Cinema Room',
+    availability: true,
+    fa_class: 'fas fa-film'
+  },
+   {
+    name:'Kitchen',
+    availability: true,
+    fa_class: 'fas fa-blender'
+
+  },
+  {
+    name:'Dining Room',
+    availability: true,
+    fa_class: "fas fa-utensils"
+  }
+
+]
+
 chores.each_with_index do |chore, index|
   new_chore = Chore.create!(chore)
   new_room = Room.create!(number: index + 101)
@@ -91,4 +139,13 @@ end
   end
 end
 
-puts "created rooms, room_chores, and chores"
+amenities.each do |amenity|
+  new_amenity = Amenity.create!(amenity)
+end
+
+
+
+
+
+
+puts "created rooms, room_chores, chores and amenities "

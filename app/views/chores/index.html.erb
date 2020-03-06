@@ -16,7 +16,7 @@
               <thead>
                 <th></th>
                 <% @room_chores.sort_by { |room_chore| room_chore.room.number }.each do |room_chore| %>
-                <th><h3 class="d-flex justify-content-center my-3"><%= room_chore.room.number  %></h3></th>
+                <th><h3 class="d-flex justify-content-center my-3"><%= room_chore.room.number %></h3></th>
                 <% end %>
               </thead>
                 <tbody>
