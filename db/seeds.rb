@@ -63,7 +63,7 @@ first_names = [
 
 chores.each_with_index do |chore, index|
   new_chore = Chore.create!(chore)
-  new_room = Room.create!(number: index + 1)
+  new_room = Room.create!(number: index + 101)
   user = User.new(
     email: emails[index],
     first_name: first_names[index],
