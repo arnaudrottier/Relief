@@ -4,7 +4,7 @@
     <h3>
       <% if Time.now >= Time.parse("0:01") && Time.now <= Time.parse("12:00") %>
         Good Morning, <%= current_user.first_name %>
-      <% elsif Time.now >= Time.parse("12:01") && Time.now <= Time.parse("5:00") %>
+      <% elsif Time.now >= Time.parse("12:01") && Time.now <= Time.parse("17:00") %>
         Good Afternoon, <%= current_user.first_name %>
       <% else %>
         Good Evening, <%= current_user.first_name %>
