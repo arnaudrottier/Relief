@@ -19,13 +19,13 @@
       </div>
       <div class="card-body">
         <% @amenities.each do |amenity| %>
-          <li><i class="<%= amenity.fa_class %>"></i> <%= amenity.name %>
+          <ul><i class="<%= amenity.fa_class %>"></i> <%= amenity.name %>
           <% if amenity.availability == true %>
             <%= "available" %>
           <% else %>
             <%= "unavailable" %>
           <% end %>
-          </li>
+          </ul>
         <% end %>
         <a href="#" class="stretched-link"></a>
       </div>

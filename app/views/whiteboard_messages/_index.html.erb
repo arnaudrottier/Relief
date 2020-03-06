@@ -1,5 +1,5 @@
 <%= simple_form_for(@whiteboard_message) do |f| %>
-  <%= f.input :message %>
+  <%= f.input :message, placeholder: "add a message here" %>
   <%= f.input :image %>
   <%= f.submit "Submit", class: "btn btn-dark" %>
 <% end %>
