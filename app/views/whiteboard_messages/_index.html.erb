@@ -4,7 +4,7 @@
   <%= f.submit "Submit", class: "btn btn-dark" %>
 <% end %>
 
-<ul class="my-3">
+<ul class="my-3" id="whiteboard">
   <% @messages.each do |message|%>
     <%= render 'whiteboard_messages/message_card', message: message %>
   <% end %>
