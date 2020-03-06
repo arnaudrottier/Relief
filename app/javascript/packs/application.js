@@ -1,4 +1,5 @@
 import "bootstrap";
+require('./edit-modal');
 
 $(function () {
   $('[data-toggle="popover"]').popover()
