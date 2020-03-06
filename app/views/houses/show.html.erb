@@ -1,38 +1,34 @@
-<div class="container">
-  <div class="row justify-content-center my-5">
-    <h1>Welcome <%= current_user.first_name %>! / Weather Display</h1>
+<div class="container col-xs-6 col-10">
+
+  <div class="row text-center mt-3">
+    <h2><%=  %><%= current_user.first_name %>!</h2>
   </div>
-  <div class="row justify-content-center my-5">
-    <div class="col-6">
-      <div class="card">
-        <div class="card-header text-center">
-          <h4>Amenities</h4>
-        </div>
-        <div class="card-body">
-        </div>
-      <a href="#" class="stretched-link"></a>
+
+  <div class="row justify-content-center my-3">
+    <div class="card">
+      <div class="card-header text-center">
+        <h4>Amenities</h4>
       </div>
-    </div>
-    <div class="col-6">
-      <div class="card">
-        <div class="card-header text-center">
-          <h4>Chores</h4>
-        </div>
-        <div class="card-body">
-          <% @room_chores.each do |room_chore| %>
-            <li><%= room_chore.chore.name %> : <%= room_chore.start_date %> - <%= room_chore.end_date %> |
-              <% if room_chore.status == true %>
-                <i class="fas fa-check"></i>
-              <% else %>
-                <i class="fas fa-times"></i>
-              <% end %>
-            </li>
-          <% end %>
-          <a href="chores" class="stretched-link"></a>
-        </div>
+      <div class="card-body">
+        <a href="#" class="stretched-link"></a>
       </div>
     </div>
   </div>
+
+  <div class="row justify-content-center my-3">
+    <div class="card">
+      <div class="card-header text-center">
+        <h4>Chores</h4>
+      </div>
+      <div class="card-body">
+        <% @room_chores.each do |room_chore| %>
+          <li><%= room_chore.chore.name %> : <%= room_chore.start_date %> - <%= room_chore.end_date %></li>
+        <% end %>
+        <a href="chores" class="stretched-link"></a>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 <div class="container col-6">

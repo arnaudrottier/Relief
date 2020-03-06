@@ -58,7 +58,7 @@ first_names = [
   "Arnaldo",
   "Orangina",
   "Ralphie",
-  "Trouni Baby",
+  "Trouni, My Little Chocolatine 🍫",
 ]
 
 chores.each_with_index do |chore, index|
