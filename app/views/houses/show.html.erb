@@ -1,60 +1,50 @@
-<div class="container col-xs-6 col-10 p-2" >
+<div class="container col-xs-6 col-10 p-2">
 
-  <div class="row text-center">
-    <h1>Welcome <%= current_user.first_name %>! / Weather Display</h1>
+  <div class="row text-center mt-3">
+    <h3>
+      <% if Time.now >= Time.parse("0:01") && Time.now <= Time.parse("12:00") %>
+        Good Morning, <%= current_user.first_name %>
+      <% elsif Time.now >= Time.parse("12:01") && Time.now <= Time.parse("5:00") %>
+        Good Afternoon, <%= current_user.first_name %>
+      <% else %>
+        Good Evening, <%= current_user.first_name %>
+      <% end %>
+    </h3>
   </div>
 
   <div class="row justify-content-center my-3">
     <div class="card" id="amenities">
       <div class="card-header text-center">
-        <h4>Amenities</h4>
+        <h4>Amenities Booked</h4>
+        <a href="amenities" class="stretched-link"></a>
       </div>
       <div class="card-body">
-        <a href="#" class="stretched-link"></a>
       </div>
     </div>
   </div>
 
   <div class="row justify-content-center my-3">
-    <div class="card">
+    <div class="card" id="chores">
       <div class="card-header text-center">
-        <h4>Chores</h4>
+        <h4>Your Chores</h4>
+        <a href="chores" class="stretched-link"></a>
       </div>
       <div class="card-body" id="chores">
         <% @room_chores.each do |room_chore| %>
-          <li><%= room_chore.chore.name %> : <%= room_chore.start_date %> - <%= room_chore.end_date %> |
+          <li>
             <% if room_chore.status == true %>
               <i class="fas fa-check"></i>
             <% else %>
               <i class="fas fa-times"></i>
             <% end %>
+            <strong><%= room_chore.chore.name %></strong> : <%= room_chore.start_date.strftime("%b %d") %> - <%= room_chore.end_date.strftime("%b %d") %>
           </li>
         <% end %>
-        <a href="chores" class="stretched-link"></a>
-        
-    <div class="col-6">
-      <div class="card">
-        <div class="card-header text-center">
-          <h4>Chores</h4>
-        </div>
-        <div class="card-body">
-          <% @room_chores.each do |room_chore| %>
-            <li><%= room_chore.chore.name %> : <%= room_chore.start_date %> - <%= room_chore.end_date %> |
-              <% if room_chore.status %>
-                <i class="fas fa-check"></i>
-              <% else %>
-                <i class="fas fa-times"></i>
-              <% end %>
-            </li>
-          <% end %>
-          <a href="chores" class="stretched-link"></a>
-        </div>
       </div>
     </div>
   </div>
 
-
-  <div class="card row">
+  <div class="card row mt-5">
     <div class="card-header">
       <div class="text-left m-3 p-2">
         <strong>Whiteboard</strong>
@@ -66,4 +56,5 @@
       </div>
     </div>
   </div>
+
 </div>
