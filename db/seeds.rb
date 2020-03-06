@@ -54,13 +54,13 @@ emails = [
   "tmoney@gmail.com",
 ]
 
-first_names = [
+names = [
   "Richie Ratchet",
   "Billy Boy",
   "Arnaldo",
   "Orangina",
   "Ralphie",
-  "Trouni Baby",
+  "Trouni, My Little Chocolatine 🍫",
 ]
 
 amenities = [
@@ -114,7 +114,7 @@ chores.each_with_index do |chore, index|
   new_room = Room.create!(number: index + 101)
   user = User.new(
     email: emails[index],
-    first_name: first_names[index],
+    first_name: names[index],
     password: "123456",
     room: new_room
   )
