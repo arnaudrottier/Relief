@@ -1,6 +1,7 @@
 .card-chore-table{
-  width: 400px;
   height: 400px;
+  h3{ font-size: 16px;
+  }
 }
 
 .card-chore-name{
@@ -14,5 +15,9 @@
 }
 
 .card-body{
-  background: #9F9E9E;
+  background: #D3D3D3;
+}
+
+h4 {
+  margin: 0;
 }

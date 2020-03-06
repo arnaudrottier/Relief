@@ -25,7 +25,7 @@ chores = [
   },
   {
     name:'Living room',
-    description:'Vaccum the carpeted areas, wipe down coffeetable, water the plants, and dust the windowsils as needed.'
+    description:'Vacuum the carpeted areas, wipe down coffeetable, water the plants, and dust the windowsils as needed.'
   },
   {
     name:'Bathroom',
