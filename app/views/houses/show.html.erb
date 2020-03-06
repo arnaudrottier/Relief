@@ -11,26 +11,18 @@
     </h3>
   </div>
 
-  <div class="row justify-content-center my-3">
     <div class="card wide-container">
-      <div class="card-header text-center">
-        <h4>Amenities Booked</h4>
-        <a href="amenities" class="stretched-link"></a>
+      <div class="card-header">
+        <div class="text-left m-3 p-2">
+          <strong>Whiteboard</strong>
+        </div>
       </div>
-      <div class="card-body">
-        <% @amenities.each do |amenity| %>
-          <ul><i class="<%= amenity.fa_class %>"></i> <%= amenity.name %>
-          <% if amenity.availability == true %>
-            <%= "available" %>
-          <% else %>
-            <%= "unavailable" %>
-          <% end %>
-          </ul>
-        <% end %>
-        <a href="#" class="stretched-link"></a>
+      <div class="card-body my-3">
+        <div class="text-left m-3 p-2">
+          <%= render 'whiteboard_messages/index', whiteboard_message: @whiteboard_message %>
+        </div>
       </div>
     </div>
-  </div>
 
   <div class="row justify-content-center my-3">
     <div class="card wide-container">
@@ -53,16 +45,26 @@
       </div>
     </div>
   </div>
+
+  <div class="row justify-content-center my-3">
     <div class="card wide-container">
-      <div class="card-header">
-        <div class="text-left m-3 p-2">
-          <strong>Whiteboard</strong>
-        </div>
+      <div class="card-header text-center">
+        <h4>Amenities Booked</h4>
+        <a href="amenities" class="stretched-link"></a>
       </div>
-      <div class="card-body my-3">
-        <div class="text-left m-3 p-2">
-          <%= render 'whiteboard_messages/index', whiteboard_message: @whiteboard_message %>
-        </div>
+      <div class="card-body">
+        <% @amenities.each do |amenity| %>
+          <ul><i class="<%= amenity.fa_class %>"></i> <%= amenity.name %>
+          <% if amenity.availability == true %>
+            <%= "available" %>
+          <% else %>
+            <%= "unavailable" %>
+          <% end %>
+          </ul>
+        <% end %>
+        <a href="#" class="stretched-link"></a>
       </div>
     </div>
+  </div>
+
 </div>
