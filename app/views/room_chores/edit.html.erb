@@ -2,7 +2,7 @@
  <div class="row justify-content-center my-3">
     <div class="card" style="width: 500px; height: 500px;">
       <div class="card-header text-center">
-        <h4><%= @room_chore.chore.name %> Task completed?</h4>
+        <h4><%= @room_chore.chore.name %> Chore completed!</h4>
       </div>
       <div class="card-body">
       <%= simple_form_for @room_chore do |f| %>
@@ -23,7 +23,7 @@
      <div class="modal-content">
        <!--Header-->
        <div class="modal-header d-flex justify-content-center">
-         <h1 class="heading lead">Job Done?</h1>
+         <h1 class="heading lead">Chore Done!</h1>
        </div>
        <!--Body-->
        <div class="modal-body">
@@ -42,7 +42,7 @@
 
         <%= f.submit class: 'btn btn-outline-success' %>
 
-         <a type="button" class="btn btn-outline-success waves-effect" data-dismiss="modal">Not yet</a>
+         <a type="button" class="btn btn-outline-success waves-effect" data-dismiss="modal">Cancel</a>
         <% end %>
 
        </div>
