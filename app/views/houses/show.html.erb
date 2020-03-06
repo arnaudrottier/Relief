@@ -1,7 +1,5 @@
 <div class="container col-xs-6 col-10 p-2">
-
-
-  <div class="row text-center mt-3">
+  <div class="row text-center mt-3" style="color:#FFFFEA;">
     <h3>
       <% if Time.now >= Time.parse("0:01") && Time.now <= Time.parse("12:00") %>
         Good Morning, <%= current_user.first_name %>
@@ -42,14 +40,14 @@
       </div>
       <div class="card-body" id="chores">
         <% @room_chores.each do |room_chore| %>
-          <li>
+          <ul>
             <% if room_chore.status == true %>
-              <i class="fas fa-check"></i>
+              <i class="fas fa-check" style="color:#1EDD88;"></i>
             <% else %>
-              <i class="fas fa-times"></i>
+              <i class="fas fa-times" style="color:#FD1015;"></i>
             <% end %>
             <strong><%= room_chore.chore.name %></strong> : <%= room_chore.start_date.strftime("%b %d") %> - <%= room_chore.end_date.strftime("%b %d") %>
-          </li>
+          </ul>
         <% end %>
         <a href="chores" class="stretched-link"></a>
     <div class="col-6">
