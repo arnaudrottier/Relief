@@ -1,12 +1,12 @@
-<div class="d-flex justify-content-center">
-  <div class="container-chore mt-3">
-    <div class="row">
-      <div class="col-12">
-      <h2 class="d-flex justify-content-center" style="font-size: 60px;">Job done!</h2>
-        <h2 style="margin-top: 56px;">When: <%= @room_chore.period %></h2>
-        <h2>Notes: <%= @room_chore.notes %></h2>
-      </div>
-      <h2><%= link_to "Return", chores_path %></h2>
+<div class="row justify-content-center my-3">
+  <div class="card" style="width: 500px; height: 500px;">
+    <div class="card-header text-center">
+      <h4>Job done!</h4>
     </div>
+      <div class="card-body">
+        <p>When: <%= @room_chore.period %></p>
+        <p>Notes: <%= @room_chore.notes %></p>
+      </div>
+      <p><%= link_to "Return", chores_path %></p>
   </div>
 </div>
