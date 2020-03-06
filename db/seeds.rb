@@ -20,28 +20,28 @@ puts "Destroyed Users, Rooms, Chores and Amenities"
 
 chores = [
   {
-    name:'Dishes',
-    description:'Located in the kitchen, please put away after drying.'
+    name:'Kitchen',
+    description:'Clean table and countertops, refill condiments, if any clean utensils or plates please put away.'
   },
   {
-    name:'Vaccuming',
-    description:'Vaccum the carpeted areas.'
+    name:'Living room',
+    description:'Vaccum the carpeted areas, wipe down coffeetable, water the plants, and dust the windowsils as needed.'
   },
   {
     name:'Bathroom',
-    description:'Clean the sinks, toliets, and showers.'
+    description:'Clean the sink, toliet, shower, empty trashcan and replace toiletries as needed.'
   },
   {
-    name:'Kitchen',
-    description:'Please clean up the tabletops, refill napkins, utensils, etc.'
+    name:'Genkan',
+    description:'Please clean up any outside debris, organize shoes, and sweep tiled area as needed.'
+  },
+  {
+    name:'Cinema room',
+    description:'Wipe down seats, clean projector lens with compressed air, and vacuum floor as needed.'
   },
   {
     name:'Trash',
-    description:'Make sure trash is recycled, and placed outside on Tuesday and Friday mornings.'
-  },
-  {
-    name:'Shared Room',
-    description:'The Livingroom, Diningroom, and Genkan.'
+    description:'Bins are separated into PET Bottles, Assorted Glass, Cans, and Burnable Trash. Once a bin is full, please take it to the corressponding can outside: the trashmen will dispose of whatever is in the can on pickup day!'
   }
 ]
 
