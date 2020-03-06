@@ -1,5 +1,4 @@
 <div class="container col-xs-6 col-10 p-2">
-
   <div class="row text-center mt-3" style="color:#FFFFEA;">
     <h3>
       <% if Time.now >= Time.parse("0:01") && Time.now <= Time.parse("12:00") %>
@@ -19,6 +18,16 @@
         <a href="amenities" class="stretched-link"></a>
       </div>
       <div class="card-body">
+        <% @amenities.each do |amenity| %>
+          <li><i class="<%= amenity.fa_class %>"></i> <%= amenity.name %>
+          <% if amenity.availability == true %>
+            <%= "available" %>
+          <% else %>
+            <%= "unavailable" %>
+          <% end %>
+          </li>
+        <% end %>
+        <a href="#" class="stretched-link"></a>
       </div>
     </div>
   </div>
@@ -41,6 +50,23 @@
           </ul>
         <% end %>
         <a href="chores" class="stretched-link"></a>
+    <div class="col-6">
+      <div class="card">
+        <div class="card-header text-center">
+          <h4>Chores</h4>
+        </div>
+        <div class="card-body">
+          <% @room_chores.each do |room_chore| %>
+            <li><%= room_chore.chore.name %> : <%= room_chore.start_date %> - <%= room_chore.end_date %> |
+              <% if room_chore.status %>
+                <i class="fas fa-check"></i>
+              <% else %>
+                <i class="fas fa-times"></i>
+              <% end %>
+            </li>
+          <% end %>
+          <a href="chores" class="stretched-link"></a>
+        </div>
       </div>
     </div>
   </div>
