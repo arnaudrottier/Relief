@@ -24,7 +24,7 @@ chores = [
     description:'Clean table and countertops, refill condiments, if any clean utensils or plates please put away.'
   },
   {
-    name:'Livingroom',
+    name:'Living room',
     description:'Vaccum the carpeted areas, wipe down coffeetable, water the plants, and dust the windowsils as needed.'
   },
   {
@@ -36,7 +36,7 @@ chores = [
     description:'Please clean up any outside debris, organize shoes, and sweep tiled area as needed.'
   },
   {
-    name:'Cinemaroom',
+    name:'Cinema room',
     description:'Wipe down seats, clean projector lens with compressed air, and vacuum floor as needed.'
   },
   {
