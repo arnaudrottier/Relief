@@ -1,6 +1,12 @@
- <h2>room_chore.showpage</h2>
- <p>status:<%= @room_chore.status %></p>
- <p>notes: <%= @room_chore.notes %></p>
- <p>period: <%= @room_chore.period %></p>
-<%= link_to "edit", edit_room_chore_path %>
-
+<div class="d-flex justify-content-center">
+  <div class="container-chore mt-3">
+    <div class="row">
+      <div class="col-12">
+      <h2 class="d-flex justify-content-center" style="font-size: 60px;">Job done!</h2>
+        <h2 style="margin-top: 56px;">When: <%= @room_chore.period %></h2>
+        <h2>Notes: <%= @room_chore.notes %></h2>
+      </div>
+      <h2><%= link_to "Return", chores_path %></h2>
+    </div>
+  </div>
+</div>

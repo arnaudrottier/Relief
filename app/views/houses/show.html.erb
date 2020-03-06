@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="container col-xs-6 col-10">
 
   <div class="row text-center mt-3">
@@ -6,6 +7,16 @@
 
   <div class="row justify-content-center my-3">
     <div class="card">
+=======
+<div class="container col-xs-6 col-10 p-2" >
+
+  <div class="row text-center">
+    <h1>Welcome <%= current_user.first_name %>! / Weather Display</h1>
+  </div>
+
+  <div class="row justify-content-center my-3">
+    <div class="card" id="amenities">
+>>>>>>> 331aa935fced95d11d64f2865fa097647b2f82fa
       <div class="card-header text-center">
         <h4>Amenities</h4>
       </div>
@@ -20,6 +31,7 @@
       <div class="card-header text-center">
         <h4>Chores</h4>
       </div>
+<<<<<<< HEAD
       <div class="card-body">
         <% @room_chores.each do |room_chore| %>
           <li><%= room_chore.chore.name %> : <%= room_chore.start_date %> - <%= room_chore.end_date %></li>
@@ -30,9 +42,43 @@
   </div>
 
 </div>
+=======
+      <div class="card-body" id="chores">
+        <% @room_chores.each do |room_chore| %>
+          <li><%= room_chore.chore.name %> : <%= room_chore.start_date %> - <%= room_chore.end_date %> |
+            <% if room_chore.status == true %>
+              <i class="fas fa-check"></i>
+            <% else %>
+              <i class="fas fa-times"></i>
+            <% end %>
+          </li>
+        <% end %>
+        <a href="chores" class="stretched-link"></a>
+        
+    <div class="col-6">
+      <div class="card">
+        <div class="card-header text-center">
+          <h4>Chores</h4>
+        </div>
+        <div class="card-body">
+          <% @room_chores.each do |room_chore| %>
+            <li><%= room_chore.chore.name %> : <%= room_chore.start_date %> - <%= room_chore.end_date %> |
+              <% if room_chore.status %>
+                <i class="fas fa-check"></i>
+              <% else %>
+                <i class="fas fa-times"></i>
+              <% end %>
+            </li>
+          <% end %>
+          <a href="chores" class="stretched-link"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+>>>>>>> 331aa935fced95d11d64f2865fa097647b2f82fa
 
-<div class="container col-6">
-  <div class="card">
+
+  <div class="card row">
     <div class="card-header">
       <div class="text-left m-3 p-2">
         <strong>Whiteboard</strong>
