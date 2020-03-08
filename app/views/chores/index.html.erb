@@ -46,11 +46,9 @@
                   <thead>
                     <th></th>
                       <% @users.each do |user| %>
-                        <%= cl_image_tag user.image.key, class: :avatar %>
+                       <th> <i class="d-flex justify-content-center"><%= cl_image_tag user.image.key, class: :avatar %></i> </th>
                       <% end %>
-                    <% @room_chores.sort_by { |room_chore| room_chore.room.number }.each do |room_chore| %>
-                    <th><p class="d-flex justify-content-center" style="font-size: 16px;"><%= room_chore.room.number %></p></th>
-                    <% end %>
+
                   </thead>
                   <tbody>
                     <% @room_chores.each do |room_chore| %>
