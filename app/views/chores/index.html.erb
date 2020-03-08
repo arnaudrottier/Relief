@@ -13,12 +13,15 @@
         <div class="d-flex justify-content-center">
           <div class="container-chore">
             <div class="row">
-              <div class="col-sm-6">
+              <div class="col-xs-6">
                 <table class="card-chore-table">
                   <thead>
                     <th></th>
+                      <% @users.each do |user| %>
+                        <%= cl_image_tag user.image.key, class: :avatar %>
+                      <% end %>
                     <% @room_chores.sort_by { |room_chore| room_chore.room.number }.each do |room_chore| %>
-                    <th><h3 class="d-flex justify-content-center my-3"><%= room_chore.room.number %></h3></th>
+                    <th><p class="d-flex justify-content-center" style="font-size: 16px;"><%= room_chore.room.number %></p></th>
                     <% end %>
                   </thead>
                   <tbody>
@@ -33,16 +36,20 @@
         </div>
       </div>
 
+
       <div id="this" class="tabcontent">
         <div class="d-flex justify-content-center">
           <div class="container-chore">
             <div class="row">
-              <div class="col-sm-6">
+              <div class="col-xs-6">
                 <table class="card-chore-table">
                   <thead>
                     <th></th>
+                      <% @users.each do |user| %>
+                        <%= cl_image_tag user.image.key, class: :avatar %>
+                      <% end %>
                     <% @room_chores.sort_by { |room_chore| room_chore.room.number }.each do |room_chore| %>
-                    <th><p class="d-flex justify-content-center" style="font-size: 24px;"><%= room_chore.room.number %></p></th>
+                    <th><p class="d-flex justify-content-center" style="font-size: 16px;"><%= room_chore.room.number %></p></th>
                     <% end %>
                   </thead>
                   <tbody>
@@ -61,12 +68,15 @@
         <div class="d-flex justify-content-center">
           <div class="container-chore">
             <div class="row">
-              <div class="col-sm-6">
+              <div class="col-xs-6">
                 <table class="card-chore-table">
                   <thead>
                     <th></th>
+                      <% @users.each do |user| %>
+                        <%= cl_image_tag user.image.key, class: :avatar %>
+                      <% end %>
                     <% @room_chores.sort_by { |room_chore| room_chore.room.number }.each do |room_chore| %>
-                    <th><h3 class="d-flex justify-content-center my-3"><%= room_chore.room.number %></h3></th>
+                    <th><p class="d-flex justify-content-center" style="font-size: 16px;"><%= room_chore.room.number %></p></th>
                     <% end %>
                   </thead>
                   <tbody>
@@ -80,6 +90,7 @@
           </div>
         </div>
       </div>
+
 
       <script>
         function openWeek(evt, cityName) {
