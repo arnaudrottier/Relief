@@ -1,5 +1,12 @@
-<tr><td><%= amenity.name %>
-  <%= amenity.bookings.try :start_date %>
-  <%= amenity.bookings.try :end_date %>
-</td></tr>
+<br>
+<i class="<%= amenity.fa_class %>"></i> <%= amenity.name %>
+<%= simple_form_for [amenity, @booking] do |f| %>
+  <%= f.input :start_time, as: :string, input_html: {class: "datepicker"} %>
+  <%= f.input :end_time, as: :string, input_html: {class: "datepicker"} %>
+  <%= f.submit "book" %>
+<% end %>
 
+<!-- making a form for a booking
+feeding the booking an amenity id and room id
+has start date / end date
+-->
