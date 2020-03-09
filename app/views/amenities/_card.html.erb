@@ -1,0 +1,5 @@
+<tr><td><%= amenity.name %>
+  <%= amenity.bookings.try :start_date %>
+  <%= amenity.bookings.try :end_date %>
+</td></tr>
+
