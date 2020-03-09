@@ -1,0 +1,5 @@
+meta_product_name: "Relief"
+meta_title: "Relief - Messiah to your shared space"
+meta_description: "Relief, an app to put harmony in your shared space "
+meta_image: "background.jpg" # should exist in `app/assets/images/`
+# twitter_account: "@product_twitter_account"   # required for Twitter Cards

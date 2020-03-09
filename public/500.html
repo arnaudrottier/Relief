@@ -4,63 +4,134 @@
   <title>We're sorry, but something went wrong (500)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-  .rails-default-error-page {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
+#hal-body{
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-image: radial-gradient(#E60000, #660000);
+  filter: blur(17px);
+  position: relative;
+}
+
+#hal-eye{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-image: radial-gradient(#ffff33 10%, #c40000 65%);
+  position: relative;
+  left: 120px;
+  top: -280px;
+}
+
+#hal-eyeout{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-image: radial-gradient(#880000, #cc0000);
+  position: relative;
+  left: 100px;
+  top: -200px;
+  filter: blur(3px)
+}
+
+#hal{
+  border: inset #9FA1A3 12px;
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  padding: 50px;
+  display: inline-block;
+  visibility: hidden;
+  filter: contrast(160%);
+  animation: 7s halTrans 1 linear forwards;
+  animation-delay: 3s;
+  position: relative;
+  top: -70px;
+}
+
+body{
+  text-align: center;
+  animation: 7s bkgrdTrans 1 linear forwards;
+  animation-delay: 3s;
+}
+
+#hal-text{
+  color: red;
+  font-size: 3em;
+  position: relative;
+  top: -70px
+}
+
+#error-msg{
+  margin-top: 100px;
+  font-size: 3em;
+  animation: 7s errorTrans 1 linear forwards;
+  animation-delay: 3s;
+}
+
+@keyframes errorTrans{
+  1%{transform: skew(0);}
+  3%{transform: skew(70deg);}
+  4%{transform: skew(0);}
+  14%{transform: skew(0);}
+  16%{transform: skew(-90deg);}
+  18%{transform: skew(0);}
+  25%{transform: skew(0);}
+  27%{transform: skew(90deg);}
+  28%{transform: skew(0);}
+  35%{
+    transform: skew(0);
+    color: black;}
+  41%{
+    transform: skew(0);
+    color: white;}
+  42%{transform: skewX(-40deg);}
+  43%{
+    visibility: hidden;
+    z-index: -1;}
+  100%{
+    visibility: hidden;
+    z-index: -1;}
+}
+
+@keyframes bkgrdTrans{
+  0%{background: white;}
+  20%{background: white;}
+  21%{background: black;}
+  22%{background: white;}
+  30%{background: white;}
+  31%{background: black;}
+  32%{background: white;}
+  33%{background: black;}
+  34%{background: white;}
+  35%{background: black;}
+  100%{background: black;}
+}
+
+@keyframes halTrans{
+  0%{visibility: hidden;}
+  60%{
+    visibility: hidden;
+    /*opacity: 0;*//*uncomment former for only one hal fade in it was a bug intially but i liked how it looked if anoyone doesnt...*/
   }
 
-  .rails-default-error-page div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
-
-  .rails-default-error-page div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
-
-  .rails-default-error-page h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
-
-  .rails-default-error-page div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+  80%{
+    visibility: visible;
+    opacity: 0;}
+  100%{
+    visibility: visible;
+    opacity: 1;}
+}
   </style>
 </head>
-
-<body class="rails-default-error-page">
-  <!-- This file lives in public/500.html -->
-  <div class="dialog">
-    <div>
-      <h1>We're sorry, but something went wrong.</h1>
-    </div>
-    <p>If you are the application owner check the logs for more information.</p>
+<body>
+  <div id="error-msg">Status 500: SERVER ERROR</div>
+  <div id="hal">
+    <div id="hal-body"></div>
+    <div id="hal-eyeout"></div>
+    <div id="hal-eye"></div>
+    <div id="hal-text"></div>
   </div>
+
 </body>
 </html>
