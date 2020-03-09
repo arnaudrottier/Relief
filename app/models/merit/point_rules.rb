@@ -13,17 +13,21 @@ module Merit
     include Merit::PointRulesMethods
 
     def initialize
-      score 10, :on => 'users#create' do |user|
-        user.bio.present?
+      score 10, on: 'room_chores#update', category: 'room_chore_activity' do |room_chore|
+        room_chore.status?
       end
-      #needs to speak with user/room_chore
-      #must add points if chore if complete WHEN period of time ends and new chore is assigned
-      #right now, points are being awarded for creating posts/reviewing
-      #I tried to screw around, but am lost on conditionals here
 
-      score 15, :on => 'chores#create', :to => [:reviewer, :reviewed]
+      # score 10, :on => 'users#create' do |user|
+      #   user
+      # end
+      # #needs to speak with user/room_chore
+      # #must add points if chore if complete WHEN period of time ends and new chore is assigned
+      # #right now, points are being awarded for creating posts/reviewing
+      # #I tried to screw around, but am lost on conditionals here
 
-      score -10, :on => 'chores#destroy'
+      # score 15, :on => 'chores#create'
+
+      # score -10, :on => 'chores#destroy'
     end
   end
 end
