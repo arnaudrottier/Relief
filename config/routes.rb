@@ -1,16 +1,16 @@
 Rails.application.routes.draw do
-  get 'booking/new'
-  get 'booking/create'
-  get 'booking/destroy'
-  devise_for :users
-  root to: 'pages#home'
-  get "my_house", to: "houses#show"
-  resources :whiteboard_messages, only: [:new, :create]
-  resources :room_chores, only: [:show, :edit, :update] # show will be partial displayed on homepage
-  resources :chores, only: [:index]
-  resources :amenities, only: [:index] do
-    resources :bookings, only: [:new, :create, :destroy]
-  end
+
+devise_for :users
+root to: 'pages#home'
+get "my_house", to: "houses#show"
+resources :users, only: [:show, :edit, :update]
+resources :whiteboard_messages, only: [:new, :create]
+resources :room_chores, only: [:show, :edit, :update] # show will be partial displayed on homepage
+resources :chores, only: [:index]
+resources :amenities, only: [:index] do
+  resources :bookings, only: [:new, :create, :destroy]
+end
+
 
 # namespace :admin do
   # resources :chores

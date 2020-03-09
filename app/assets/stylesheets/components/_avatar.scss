@@ -5,9 +5,12 @@
   height: 40px;
   object-position: top;
 }
-.avatar-large {
-  width: 56px;
+.avatarlarge {
+  width: 300px;
   border-radius: 50%;
+  object-fit: cover;
+  height: 300px;
+  object-position: top;
 }
 .avatar-bordered {
   width: 40px;
@@ -21,3 +24,16 @@
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   border: white 1px solid;
 }
+
+// .zoom {
+//   transition: transform .2s;
+//   width: 50px;
+//   height: 50px;
+//   margin: 0 auto;
+// }
+
+// .zoom:hover {
+//   -ms-transform: scale(3.5); /* IE 9 */
+//   -webkit-transform: scale(3.5); /* Safari 3-8 */
+//   transform: scale(2.5);
+// }
