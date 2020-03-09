@@ -3,7 +3,7 @@ class User < ApplicationRecord
 
   belongs_to :room, required: false
   has_many :room_chores, through: :room
-# Include default devise modules. Others available are:
+  # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
