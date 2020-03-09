@@ -66,44 +66,36 @@ names = [
 amenities = [
   {
     name:'Iron',
-    availability: false,
     fa_class: 'fas fa-paper-plane'
   },
   {
     name:'Vacuum',
-    availability: true,
     fa_class: 'fas fa-broom'
   },
   {
     name:'Shower',
-    availability: false,
     fa_class: 'fas fa-bath'
   },
   {
     name:'Dryer',
-    availability: false,
     fa_class: 'fas fa-tint-slash'
 
   },
   {
     name:'Washing Machine',
-    availability: true,
     fa_class: 'fas fa-tint'
   },
   {
     name:'Cinema Room',
-    availability: true,
     fa_class: 'fas fa-film'
   },
    {
     name:'Kitchen',
-    availability: true,
     fa_class: 'fas fa-blender'
 
   },
   {
     name:'Dining Room',
-    availability: true,
     fa_class: "fas fa-utensils"
   }
 
