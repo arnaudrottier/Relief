@@ -1,12 +1,9 @@
 <br>
-<i class="<%= amenity.fa_class %>"></i> <%= amenity.name %>
+<div class="booking border m-1">
+<div class="justify-content-center text-wrap" style="width: 6rem;"><i class="<%= amenity.fa_class %>"></i><%= amenity.name %></div>
 <%= simple_form_for [amenity, @booking] do |f| %>
   <%= f.input :start_date, as: :string, input_html: {class: "datepicker"} %>
   <%= f.input :end_date, as: :string, input_html: {class: "datepicker"} %>
-  <%= f.submit "book" %>
+  <%= f.submit "book", class:"btn btn-primary text-center"%>
 <% end %>
-
-<!-- making a form for a booking
-feeding the booking an amenity id and room id
-has start date / end date
--->
+</div>
