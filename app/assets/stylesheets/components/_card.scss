@@ -5,10 +5,18 @@
 }
 
 .card-chore-name{
+  color: #555555;
   width: 109px;
   margin-right: 10px;
   margin-left: 10px;
 }
+.card-chore-name:hover {
+  color: #bbbbbb;
+  width: 109px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
 
 .card-header{
   background: #71F79F;
@@ -21,3 +29,54 @@
 h4 {
   margin: 0;
 }
+
+// flip card
+body { font-family: sans-serif; }
+
+.scene {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  margin: 40px 0;
+  perspective: 600px;
+}
+
+.card-profile {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  position: relative;
+  background-color: transparent;
+}
+
+.card-profile.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.card__face {
+  border-radius: 50%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  line-height: 260px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 40px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.card__face--front {
+  background: cover;
+}
+
+.card__face--back {
+  background: transparent;
+  transform: rotateY(180deg);
+}
+
+
