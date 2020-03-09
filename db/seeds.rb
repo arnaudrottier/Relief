@@ -131,6 +131,22 @@ end
   end
 end
 
+
+6.times do |n|
+  Chore.all.each_with_index do |chore, index|
+    room_chore = RoomChore.new(
+      start_date: Date.new(2020,3,2),
+      end_date: Date.new(2020,3,8),
+      chore: chore,
+      period: Period.convert_to_period(Date.today - 1.week * n),
+      room: Room.all[(index + n) % Room.count]
+    )
+      # binding.pry
+      room_chore.save!
+  end
+end
+
+
 amenities.each do |amenity|
   new_amenity = Amenity.create!(amenity)
 end
