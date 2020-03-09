@@ -12,7 +12,7 @@ class RoomChoresController < ApplicationController
   def update
     @room_chore = RoomChore.find(params[:id])
     if @room_chore.update(room_chore_params)
-      redirect_to room_chore_path
+      redirect_to chores_path
     else
       render 'edit'
     end
