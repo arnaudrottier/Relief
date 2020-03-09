@@ -1,0 +1,23 @@
+.other-week {
+  display: flex;
+  font-weight: lighter;
+  color: $gray;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0px;
+  opacity: 0.6;
+  p {
+    margin: 0;
+  }
+}
+
+.this-week {
+  display: flex;
+  flex-direction: column;
+  font-weight: bolder;
+  justify-content: center;
+  align-items: center;
+  .this-week-info{
+    display: flex;
+  }
+}

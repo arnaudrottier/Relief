@@ -1,4 +1,5 @@
 import "bootstrap";
+import "../plugins/flatpickr"
 require('./edit-modal');
 
 $(function () {
