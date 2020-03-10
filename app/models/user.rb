@@ -28,4 +28,7 @@ class User < ApplicationRecord
     (Date.today.year.to_s + Date.today.cweek.to_s).to_i
   end
 
+  def future_bookings(amenity)
+    amenity.bookings.where("room_id = ? AND start_date > ?", room.id, Date.today)
+  end
 end

@@ -104,19 +104,10 @@
     <div class="col-12">
       <div class="card wide-container">
         <div class="card-header text-center">
-          <h3>Amenities Booked</h3>
+          <h4>Amenities Booked</h4>
         </div>
         <div class="card-body">
-          <% @amenities.each do |amenity| %>
-          <br>
-            <i class="<%= amenity.fa_class %>"></i> <%= amenity.name %>
-            <% if amenity.availability == true %>
-              <%= "available" %>
-            <% else %>
-              <%= "unavailable" %>
-            <% end %>
-          <% end %>
-          <a href="amenities" class="stretched-link"></a>
+          <%= render "amenities/summary" %>
         </div>
       </div>
     </div>
