@@ -1,8 +1,69 @@
-#whiteboard {
-  overflow: scroll;
+.whiteboard-container {
+  overflow: auto;
   max-height: 50vh;
   min-width: 100%;
   img {
     max-width: 70%;
   }
+}
+
+.whiteboard-message {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  background: white;
+  padding: 8px 16px;
+  border: 1px solid rgb(235,235,235);
+}
+
+.whiteboard-message .whiteboard-message-content {
+  flex-grow: 1;
+  padding: 0 24px;
+  word-break: break-word;
+}
+
+.whiteboard-message p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.whiteboard-message small {
+  color: #999999;
+  font-weight: bold;
+}
+.whiteboard-message .whiteboard-message-actions {
+  opacity: 0;
+  display: flex;
+  transition: ease .3s;
+}
+
+.whiteboard-message:hover .whiteboard-message-actions {
+  opacity: 1;
+}
+
+.whiteboard-message .whiteboard-message-actions a {
+  color: #999999;
+  margin-left: 16px;
+  font-size: 14px;
+}
+
+.whiteboard-message .whiteboard-message-actions a:hover {
+  color: #555555;
+}
+
+.whiteboard-avatar-fill{
+  height: 61px;
+  width: 85px;
+  margin-left: 40px;
+  padding-top: 10px;
+  padding-left: 23px;
+  background: white;
+}
+
+.post_message {
+  flex-grow: 1;
+}
+
+#whiteboard_message_message {
+  flex-grow: 0;
 }
