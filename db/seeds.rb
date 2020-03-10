@@ -55,12 +55,12 @@ emails = [
 ]
 
 names = [
-  "Richie Ratchet",
-  "Billy Boy",
+  "Richie",
+  "Bill",
   "Arnaldo",
   "Orangina",
   "Ralphie",
-  "Trouni, My Little Chocolatine 🍫",
+  "Trouni",
 ]
 bios = [
   "Hi, I'm Richie, from Malaysia. I’ve been learning Japanese for 2 years. I was working as a dentist in my home town. One of my hobbies is watching movies.",

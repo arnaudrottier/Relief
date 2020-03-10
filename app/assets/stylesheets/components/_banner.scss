@@ -3,13 +3,30 @@
   background-position: center;
   padding: 150px 0;
   height: 100vh;
-  color: white;
+  color: #FFFFEA;
   text-align: center;
 }
 
 .banner p {
   font-size: 20px;
-  color: white;
+  color: #FFFFEA;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.show-banner {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), asset-url("banner-2.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  height: 50vh;
+  color: #FFFFEA;
+  text-align: center;
+}
+
+.show-banner p {
+  display: flex-inline;
+  font-size: 30px;
+  color: #FFFFEA;
+  text-align: center;
 }
