@@ -117,15 +117,15 @@ chores.each_with_index do |chore, index|
     first_name: names[index],
     password: "123456",
     room: new_room,
-    bio: bios[index]
+    bio: bios[index],
   )
     user.save!
-  file = File.open("app/assets/images/user_photo.jpg")
+
+  url = open('https://le-wagon-tokyo.herokuapp.com/batches/363/student').read
+  file = URI.open(url)
   user.image.attach(io: file, filename: 'user.jpg', content_type: 'image/jpg')
 
 end
-
-
 
 6.times do |n|
   Chore.all.each_with_index do |chore, index|
