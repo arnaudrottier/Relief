@@ -30,18 +30,33 @@
         <h4>Your Chores</h4>
         <a href="chores" class="stretched-link"></a>
       </div>
-      <div class="card-body" id="chores">
-        <% @room_chores.each do |room_chore| %>
-            <% if room_chore.status == true %>
-            <br>
-              <i class="fas fa-check" style="color:#1EDD88;"></i>
+      <div class="card-body" id="chores" style="background-color: white">
+        <div class="other-week">
+          <p class="mr-3"><strong>Last Week:</strong></p>
+          <p class="mr-3"><%= @previous_room_chore.chore.name %></p>
+          <% if @previous_room_chore.status %>
+            <small class="mr-3">+10 pts</small>
+          <% else %>
+            <small class="mr-3">0 pts</small>
+          <% end %>
+        </div>
+
+        <div class="this-week">
+          <h4><%= @current_room_chore.formatted_start_date %> - <%= @current_room_chore.formatted_end_date %></h4>
+          <div class="this-week-info">
+            <% if @current_room_chore.status %>
+              <i class="fas fa-check mr-2" style="color:#1EDD88;"></i>
             <% else %>
-            <br>
-              <i class="fas fa-times" style="color:#FD1015;"></i>
+              <i class="far fa-square mr-2" style="color:#FD1015;"></i>
             <% end %>
-            <strong><%= room_chore.chore.name %></strong> : <%= room_chore.start_date.strftime("%b %d") %> - <%= room_chore.end_date.strftime("%b %d") %>
-        <% end %>
-        <a href="chores" class="stretched-link"></a>
+            <%= @current_room_chore.chore.name %>
+          </div>
+        </div>
+
+        <div class="other-week">
+          <p class="mr-3"><strong>Next Week:</strong></p>
+          <%= @next_room_chore.chore.name %>
+        </div>
       </div>
     </div>
   </div>
@@ -50,7 +65,6 @@
     <div class="card wide-container">
       <div class="card-header text-center">
         <h4>Amenities Booked</h4>
-        <a href="amenities" class="stretched-link"></a>
       </div>
       <div class="card-body">
         <% @amenities.each do |amenity| %>
@@ -62,9 +76,8 @@
             <%= "unavailable" %>
           <% end %>
         <% end %>
-        <a href="#" class="stretched-link"></a>
+        <a href="amenities" class="stretched-link"></a>
       </div>
     </div>
   </div>
-
 </div>

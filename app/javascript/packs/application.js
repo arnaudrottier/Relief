@@ -1,4 +1,5 @@
 import "bootstrap";
+import "../plugins/flatpickr"
 require('./edit-modal');
 
 $(function () {
@@ -7,3 +8,8 @@ $('.popover-dismiss').popover({
   trigger: 'focus'
   })
 })
+
+let card = document.querySelector('.card-profile');
+card.addEventListener( 'click', function() {
+  card.classList.toggle('is-flipped');
+});

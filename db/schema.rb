@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_09_095026) do
+ActiveRecord::Schema.define(version: 2020_03_09_062918) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,11 +56,11 @@ ActiveRecord::Schema.define(version: 2020_03_09_095026) do
 
   create_table "bookings", force: :cascade do |t|
     t.bigint "amenity_id"
-    t.time "start_time"
-    t.time "end_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "room_id"
+    t.datetime "start_date"
+    t.datetime "end_date"
     t.index ["amenity_id"], name: "index_bookings_on_amenity_id"
     t.index ["room_id"], name: "index_bookings_on_room_id"
   end
@@ -108,6 +108,22 @@ ActiveRecord::Schema.define(version: 2020_03_09_095026) do
     t.index ["sash_id"], name: "index_merit_scores_on_sash_id"
   end
 
+  create_table "profile", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "avatar"
+    t.text "bio"
+    t.bigint "room_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["room_id"], name: "index_profile_on_room_id"
+  end
+
+  create_table "profiles", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "room_chores", force: :cascade do |t|
     t.bigint "room_id"
     t.bigint "chore_id"
@@ -146,6 +162,7 @@ ActiveRecord::Schema.define(version: 2020_03_09_095026) do
     t.bigint "room_id"
     t.integer "sash_id"
     t.integer "level", default: 0
+    t.text "bio"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["room_id"], name: "index_users_on_room_id"
@@ -161,6 +178,7 @@ ActiveRecord::Schema.define(version: 2020_03_09_095026) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookings", "amenities"
   add_foreign_key "bookings", "rooms"
+  add_foreign_key "profile", "rooms"
   add_foreign_key "room_chores", "chores"
   add_foreign_key "room_chores", "rooms"
   add_foreign_key "users", "rooms"

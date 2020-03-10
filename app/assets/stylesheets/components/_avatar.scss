@@ -5,9 +5,12 @@
   height: 40px;
   object-position: top;
 }
-.avatar-large {
-  width: 56px;
+.avatarlarge {
+  width: 300px;
   border-radius: 50%;
+  object-fit: cover;
+  height: 300px;
+  object-position: top;
 }
 .avatar-bordered {
   width: 40px;
