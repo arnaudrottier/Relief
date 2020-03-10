@@ -10,6 +10,7 @@ require "open-uri"
 
 puts "Destroying Users, Rooms, Chores and Amenities"
 Booking.destroy_all
+WhiteboardMessage.destroy_all
 User.destroy_all
 Room.destroy_all
 RoomChore.destroy_all
