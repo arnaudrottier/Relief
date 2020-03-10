@@ -10,7 +10,7 @@ class User < ApplicationRecord
   # validates :first_name, presence: :true
   # validates :last_name, presence: :true
   has_one_attached :image
-
+  has_one :country
 
   def current_room_chore
     self.room_chores.find_by(period: get_period)
@@ -28,4 +28,7 @@ class User < ApplicationRecord
     (Date.today.year.to_s + Date.today.cweek.to_s).to_i
   end
 
+  def future_bookings(amenity)
+    amenity.bookings.where("room_id = ? AND start_date > ?", room.id, Date.today)
+  end
 end
