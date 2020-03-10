@@ -1,5 +1,5 @@
 <div class="whiteboard-message">
-  <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
+  <%= cl_image_tag message.user.image.key, alt: "alttext", class:"avatarlg" %>
   <div class="whiteboard-message-content">
       <p><small><%= message.created_at.strftime("%b %d, %I:%M %p") %></small></p>
       <p><%= message.message %></p>

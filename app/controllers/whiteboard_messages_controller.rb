@@ -3,6 +3,7 @@ class WhiteboardMessagesController < ApplicationController
   def create
     @messages = WhiteboardMessage.all
     @whiteboard_message = WhiteboardMessage.new(whiteboard_messages_params)
+    @whiteboard_message.user = current_user
     if @whiteboard_message.save
       redirect_to my_house_path
     else
