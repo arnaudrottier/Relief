@@ -8,7 +8,7 @@ body {font-family: Arial;}
 /* Style the buttons inside the tab */
 .tab button {
   background-color: inherit;
-  color: #FFFFEA;
+  color: white;
   float: left;
   border: none;
   outline: none;
@@ -21,7 +21,7 @@ body {font-family: Arial;}
 
 /* Change background color of buttons on hover */
 .tab button:hover {
-  background-color: #ddd;
+  background-color: #3b90db;
 }
 
 /* Create an active/current tablink class */
