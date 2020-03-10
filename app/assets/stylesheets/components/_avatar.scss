@@ -5,11 +5,11 @@
   height: 40px;
   object-position: top;
 }
-.avatarlarge {
-  width: 300px;
+.avatar-large {
+  width: 56px;
   border-radius: 50%;
-  object-fit: cover;
-  height: 300px;
+  object-fit0: cover;
+  height: 56px;
   object-position: top;
 }
 .avatar-bordered {
@@ -29,4 +29,11 @@
   height: 56px;
   width: 56px;
   border-radius: 50%;
+}
+.avatarlarge {
+  width: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  height: 300px;
+  object-position: top;
 }
