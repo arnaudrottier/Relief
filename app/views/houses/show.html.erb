@@ -35,38 +35,46 @@
   <hr>
 
   <div class="row justify-content-center my-3">
-    <div class="col-12">
-      <div class="card wide-container">
-        <div class="card-header text-center">
-          <h3>Your Chores</h3>
-          <a href="chores" class="stretched-link"></a>
+  <small class="mr-3">+10 pts</small>
+    <div class="card wide-container">
+      <div class="card-header text-center">
+        <h4>Your Chores</h4>
+        <a href="chores" class="stretched-link"></a>
+      </div>
+      <div class="card-body" id="chores" style="background-color: white">
+
+        <div class="d-flex justify-content-around">
+          <div>
+        <div class="other-week border p-3 d-flex flex-column">
+          <p class="mr-3"><strong>Last Week:</strong></p>
+          <p class="mr-3"><%= @previous_room_chore.chore.name %></p>
+          <% if @previous_room_chore.status %>
+            <small class="mr-3">+10 pts earned</small>
+          <% else %>
+            <small class="mr-3">0 pts earned</small>
+          <% end %>
         </div>
-        <div class="card-body" id="chores">
-          <div class="other-week">
-            <p class="mr-3"><strong>Last Week:</strong></p>
-            <p class="mr-3"><%= @previous_room_chore.chore.name %></p>
-            <% if @previous_room_chore.status %>
-              <small class="mr-3">+10 pts</small>
+
+          </div>
+
+          <div>
+        <div class="this-week border p-3 d-flex flex-column justify-content-around" style='height: 100%;'>
+          <h4><%= @current_room_chore.formatted_start_date %> - <%= @current_room_chore.formatted_end_date %></h4>
+          <div class="this-week-info">
+            <% if @current_room_chore.status %>
+              <i class="fas fa-check mr-2" style="color:#1EDD88;"></i>
             <% else %>
               <small class="mr-3">0 pts</small>
             <% end %>
           </div>
-
-          <div class="this-week">
-            <h4><%= @current_room_chore.formatted_start_date %> - <%= @current_room_chore.formatted_end_date %></h4>
-            <div class="this-week-info">
-              <% if @current_room_chore.status %>
-                <i class="fas fa-check mr-2" style="color:#1EDD88;"></i>
-              <% else %>
-                <i class="far fa-square mr-2" style="color:#FD1015;"></i>
-              <% end %>
-              <%= @current_room_chore.chore.name %>
-            </div>
+          
           </div>
 
-          <div class="other-week">
-            <p class="mr-3"><strong>Next Week:</strong></p>
-            <%= @next_room_chore.chore.name %>
+          <div>
+        <div class="other-week border p-3 d-flex flex-column">
+          <p class="mr-3"><strong>Next Week:</strong></p>
+          <%= @next_room_chore.chore.name %>
+        </div>
           </div>
         </div>
       </div>
