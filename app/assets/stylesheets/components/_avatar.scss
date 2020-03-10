@@ -37,3 +37,19 @@
   height: 300px;
   object-position: top;
 }
+
+.avatarlg {
+  width: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  height: 60px;
+  object-position: top;
+}
+
+.avatar-room-number {
+  text-decoration: none !important;
+  color: black;
+  &:hover {
+    color: grey;
+  }
+}

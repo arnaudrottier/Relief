@@ -19,18 +19,27 @@
 
 
 .card-header{
-  background: #71F79F;
+  background: #1871bf;
 }
 
 .card-body{
-  background: #D3D3D3;
+  background: #F2F2F2;
+}
+
+h2 {
+}
+
+h3 {
+  margin: 0;
+  color: #FFFFEA;
+  font-family: 'Nova Square', cursive;
 }
 
 h4 {
   margin: 0;
 }
 
-// flip card
+// flip card on click
 body { font-family: sans-serif; }
 
 .scene {
@@ -62,7 +71,7 @@ body { font-family: sans-serif; }
   width: 100%;
   height: 100%;
   line-height: 260px;
-  color: white;
+  color: black;
   text-align: center;
   font-weight: bold;
   font-size: 40px;
@@ -82,4 +91,5 @@ body { font-family: sans-serif; }
 .card-amenity {
   background-color: white;
 }
+
 

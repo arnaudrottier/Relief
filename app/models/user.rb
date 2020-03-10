@@ -10,7 +10,7 @@ class User < ApplicationRecord
   # validates :first_name, presence: :true
   # validates :last_name, presence: :true
   has_one_attached :image
-
+  has_one :country
 
   def current_room_chore
     self.room_chores.find_by(period: get_period)
