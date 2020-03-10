@@ -63,12 +63,17 @@
             <div>
               <div class="other-week border p-3 d-flex flex-column">
                 <p class="mr-3"><strong>Last Week:</strong></p>
-                <p class="mr-3"><%= @previous_room_chore.chore.name %></p>
-                <% if @previous_room_chore.status %>
-                  <small class="mr-3">+10 pts earned</small>
-                <% else %>
-                  <small class="mr-3">0 pts earned</small>
-                <% end %>
+                 <% if @previous_room_chore.status %>
+                  <p class="mr-3"><%= @previous_room_chore.chore.name %>
+                    <i class="fas fa-check mr-2" style="color:#1EDD88;"></i>
+                  </p>
+                 <p><small class="mr-3">10 pts earned</small></p>
+                 <% else %>
+                 <p class="mr-3"><%= @previous_room_chore.chore.name %>
+                  <i class="far fa-square mr-2" style="color:#FD1015;"></i>
+                </p>
+                 <p><small class="mr-3">0 pts earned</small></p>
+                 <% end %>
               </div>
             </div>
 
@@ -76,12 +81,14 @@
               <div class="this-week border p-3 d-flex flex-column justify-content-around" style='height: 100%;'>
                 <h4><%= @current_room_chore.formatted_start_date %> - <%= @current_room_chore.formatted_end_date %></h4>
                 <div class="this-week-info">
+                  <%= @current_room_chore.chore.name %>
                   <% if @current_room_chore.status %>
                     <i class="fas fa-check mr-2" style="color:#1EDD88;"></i>
+                    <p><small class="mr-3">10 pts earned</small></p>
                   <% else %>
                     <i class="far fa-square mr-2" style="color:#FD1015;"></i>
+                    <p><small class="mr-3">0 pts earned</small></p>
                   <% end %>
-                  <%= @current_room_chore.chore.name %>
                 </div>
               </div>
             </div>
@@ -89,7 +96,17 @@
             <div>
               <div class="other-week border p-3 d-flex flex-column">
                 <p class="mr-3"><strong>Next Week:</strong></p>
-                <%= @next_room_chore.chore.name %>
+                <% if @next_room_chore.status %>
+                  <p class='mr-3'><%= @next_room_chore.chore.name %>
+                    <i class="fas fa-check mr-2" style="color:#1EDD88;"></i>
+                  </p>
+                  <p><small class="mr-3">10 pts earned</small></p>
+                <% else %>
+                <p class="mr-3"><%= @previous_room_chore.chore.name %>
+                  <i class="far fa-square mr-2" style="color:#FD1015;"></i>
+                </p>
+                  <p><small class="mr-3">0 pts earned</small></p>
+                <% end %>
               </div>
             </div>
           </div>
