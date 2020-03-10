@@ -1,7 +1,7 @@
 .other-week {
   display: flex;
   font-weight: lighter;
-  color: $gray;
+  background-color: floralwhite;
   justify-content: center;
   align-items: center;
   margin: 20px 0px;
@@ -16,6 +16,7 @@
   flex-direction: column;
   font-weight: bolder;
   justify-content: center;
+   background-color: floralwhite;
   align-items: center;
   .this-week-info{
     display: flex;
