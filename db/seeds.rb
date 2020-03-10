@@ -9,11 +9,11 @@ require "open-uri"
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "Destroying Users, Rooms, Chores and Amenities"
+Booking.destroy_all
 User.destroy_all
+Room.destroy_all
 RoomChore.destroy_all
 Chore.destroy_all
-Room.destroy_all
-Booking.destroy_all
 Amenity.destroy_all
 puts "Destroyed Users, Rooms, Chores and Amenities"
 
@@ -55,12 +55,12 @@ emails = [
 ]
 
 names = [
-  "Richie Ratchet",
-  "Billy Boy",
+  "Richie",
+  "Bill",
   "Arnaldo",
   "Orangina",
   "Ralphie",
-  "Trouni, My Little Chocolatine 🍫",
+  "Trouni",
 ]
 bios = [
   "Hi, I'm Richie, from Malaysia. I’ve been learning Japanese for 2 years. I was working as a dentist in my home town. One of my hobbies is watching movies.",
@@ -117,15 +117,15 @@ chores.each_with_index do |chore, index|
     first_name: names[index],
     password: "123456",
     room: new_room,
-    bio: bios[index]
+    bio: bios[index],
   )
     user.save!
-  file = File.open("app/assets/images/user_photo.jpg")
+
+  url = open('https://le-wagon-tokyo.herokuapp.com/batches/363/student').read
+  file = URI.open(url)
   user.image.attach(io: file, filename: 'user.jpg', content_type: 'image/jpg')
 
 end
-
-
 
 6.times do |n|
   Chore.all.each_with_index do |chore, index|
@@ -133,28 +133,12 @@ end
       start_date: Date.new(2020,3,9),
       end_date: Date.new(2020,3,15),
       chore: chore,
-      period: Period.convert_to_period(Date.today + 1.week * n),
+      period: Period.convert_to_period(Date.today + (n - 1).weeks),
       room: Room.all[(index + n) % Room.count]
     )
       room_chore.save!
   end
 end
-
-
-6.times do |n|
-  Chore.all.each_with_index do |chore, index|
-    room_chore = RoomChore.new(
-      start_date: Date.new(2020,3,2),
-      end_date: Date.new(2020,3,8),
-      chore: chore,
-      period: Period.convert_to_period(Date.today - 1.week * n),
-      room: Room.all[(index + n) % Room.count]
-    )
-      # binding.pry
-      room_chore.save!
-  end
-end
-
 
 amenities.each do |amenity|
   new_amenity = Amenity.create!(amenity)
