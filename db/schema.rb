@@ -108,22 +108,6 @@ ActiveRecord::Schema.define(version: 2020_03_09_062918) do
     t.index ["sash_id"], name: "index_merit_scores_on_sash_id"
   end
 
-  create_table "profile", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "avatar"
-    t.text "bio"
-    t.bigint "room_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["room_id"], name: "index_profile_on_room_id"
-  end
-
-  create_table "profiles", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "room_chores", force: :cascade do |t|
     t.bigint "room_id"
     t.bigint "chore_id"
@@ -177,7 +161,6 @@ ActiveRecord::Schema.define(version: 2020_03_09_062918) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookings", "amenities"
   add_foreign_key "bookings", "rooms"
-  add_foreign_key "profile", "rooms"
   add_foreign_key "room_chores", "chores"
   add_foreign_key "room_chores", "rooms"
   add_foreign_key "users", "rooms"
