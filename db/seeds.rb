@@ -69,7 +69,7 @@ pictures = [
   "arnald.jpg",
   "natalia.jpeg",
   "doug.jpeg",
-  "trouni.jpeg"
+  "Trouni.JPG"
 ]
 
 
