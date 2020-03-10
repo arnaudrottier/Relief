@@ -1,4 +1,14 @@
-<li><%= message.message %></li>
+<div class="whiteboard-message">
+  <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
+  <div class="whiteboard-message-content">
+      <p><small><%= message.created_at.strftime("%b %d, %I:%M %p") %></small></p>
+      <p><%= message.message %></p>
       <% if message.image.attached? %>
         <%= cl_image_tag(message.image.key, crop: :fill) %>
       <% end %>
+  </div>
+  <div class="whiteboard-message-actions">
+    <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
+    <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+  </div>
+</div>
