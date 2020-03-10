@@ -11,23 +11,15 @@
     </h3>
   </div>
 
-  <div class="row justify-content-center my-3">
-    <div class="card wide-container">
-      <div class="card-header text-center">
-        <h4>Amenities Booked</h4>
-        <a href="amenities" class="stretched-link"></a>
-      </div>
-      <div class="card-body">
-        <% @amenities.each do |amenity| %>
-          <li><i class="<%= amenity.fa_class %>"></i> <%= amenity.name %>
-          <% if amenity.availability == true %>
-            <%= "available" %>
-          <% else %>
-            <%= "unavailable" %>
-          <% end %>
-          </li>
-        <% end %>
-        <a href="#" class="stretched-link"></a>
+  <div class="row justify-content-center">
+    <div class="col-12">
+      <div class="whiteboard-card">
+        <div class="card-header">
+          <h4>Whiteboard</h4>
+        </div>
+        <div class="card-body">
+          <%= render 'whiteboard_messages/index', whiteboard_message: @whiteboard_message %>
+        </div>
       </div>
     </div>
   </div>
@@ -38,50 +30,54 @@
         <h4>Your Chores</h4>
         <a href="chores" class="stretched-link"></a>
       </div>
-      <div class="card-body" id="chores">
-        <% @room_chores.each do |room_chore| %>
-          <ul>
-            <% if room_chore.status == true %>
-              <i class="fas fa-check" style="color:#1EDD88;"></i>
-            <% else %>
-              <i class="fas fa-times" style="color:#FD1015;"></i>
-            <% end %>
-            <strong><%= room_chore.chore.name %></strong> : <%= room_chore.start_date.strftime("%b %d") %> - <%= room_chore.end_date.strftime("%b %d") %>
-          </ul>
-        <% end %>
-        <a href="chores" class="stretched-link"></a>
-    <div class="col-6">
-      <div class="card">
-        <div class="card-header text-center">
-          <h4>Chores</h4>
-        </div>
-        <div class="card-body">
-          <% @room_chores.each do |room_chore| %>
-            <li><%= room_chore.chore.name %> : <%= room_chore.start_date %> - <%= room_chore.end_date %> |
-              <% if room_chore.status %>
-                <i class="fas fa-check"></i>
-              <% else %>
-                <i class="fas fa-times"></i>
-              <% end %>
-            </li>
+      <div class="card-body" id="chores" style="background-color: white">
+        <div class="other-week">
+          <p class="mr-3"><strong>Last Week:</strong></p>
+          <p class="mr-3"><%= @previous_room_chore.chore.name %></p>
+          <% if @previous_room_chore.status %>
+            <small class="mr-3">+10 pts</small>
+          <% else %>
+            <small class="mr-3">0 pts</small>
           <% end %>
-          <a href="chores" class="stretched-link"></a>
+        </div>
+
+        <div class="this-week">
+          <h4><%= @current_room_chore.formatted_start_date %> - <%= @current_room_chore.formatted_end_date %></h4>
+          <div class="this-week-info">
+            <% if @current_room_chore.status %>
+              <i class="fas fa-check mr-2" style="color:#1EDD88;"></i>
+            <% else %>
+              <i class="far fa-square mr-2" style="color:#FD1015;"></i>
+            <% end %>
+            <%= @current_room_chore.chore.name %>
+          </div>
+        </div>
+
+        <div class="other-week">
+          <p class="mr-3"><strong>Next Week:</strong></p>
+          <%= @next_room_chore.chore.name %>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="card row mt-5">
-    <div class="card-header">
-      <div class="text-left m-3 p-2">
-        <strong>Whiteboard</strong>
+  <div class="row justify-content-center my-3">
+    <div class="card wide-container">
+      <div class="card-header text-center">
+        <h4>Amenities Booked</h4>
       </div>
-    </div>
-    <div class="card-body my-3">
-      <div class="text-left m-3 p-2">
-        <%= render 'whiteboard_messages/index', whiteboard_message: @whiteboard_message %>
+      <div class="card-body">
+        <% @amenities.each do |amenity| %>
+        <br>
+          <i class="<%= amenity.fa_class %>"></i> <%= amenity.name %>
+          <% if amenity.availability == true %>
+            <%= "available" %>
+          <% else %>
+            <%= "unavailable" %>
+          <% end %>
+        <% end %>
+        <a href="amenities" class="stretched-link"></a>
       </div>
     </div>
   </div>
-
 </div>

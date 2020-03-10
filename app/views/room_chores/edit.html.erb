@@ -1,15 +1,54 @@
-<div class="d-flex justify-content-center">
-  <div class="container-chore mt-3">
-    <div class="row">
-      <div class="col-12">
-      <h2 class="d-flex justify-content-center">Task completed?</h2>
+
+ <div class="row justify-content-center my-3">
+    <div class="card" style="width: 500px; height: 500px;">
+      <div class="card-header text-center">
+        <h4><%= @room_chore.chore.name %> Chore completed!</h4>
+      </div>
+      <div class="card-body">
       <%= simple_form_for @room_chore do |f| %>
       <%= f.input :status  %>
       <%= f.input :notes  %>
       <%= f.input :period  %>
-      <button><%= f.button :submit %></button>
-      <% end %>
+
+      <button type="button" id="room-chore-submit" class="btn btn-primary mt-3" data-toggle="modal" data-target="#centralModalSuccess">Completed
+      </button>
       </div>
     </div>
   </div>
-</div>
+ <!-- Central Modal Medium Success -->
+ <div class="modal fade" id="centralModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+   aria-hidden="true">
+   <div class="modal-dialog modal-notify modal-success" role="document">
+     <!--Content-->
+     <div class="modal-content">
+       <!--Header-->
+       <div class="modal-header d-flex justify-content-center">
+         <h1 class="heading lead">Chore Done!</h1>
+       </div>
+       <!--Body-->
+       <div class="modal-body">
+         <div class="text-center">
+           <i class="fas fa-check fa-4x mb-3 animated rotateIn"></i>
+            <div class="row justify-content-center my-3">
+                  <div class="card-body">
+                    <p>When: <%= @room_chore.period %></p>
+                    <p>Notes: <span id='room-chore-notes'></span> <%= @room_chore.notes %></p>
+                  </div>
+            </div>
+         </div>
+       </div>
+       <!--Footer-->
+       <div class="modal-footer justify-content-center">
+
+        <%= f.submit class: 'btn btn-outline-success' %>
+
+         <a type="button" class="btn btn-outline-success waves-effect" data-dismiss="modal">Cancel</a>
+        <% end %>
+
+       </div>
+     </div>
+     <!--/.Content-->
+   </div>
+ </div>
+ <% javascript_pack_tag "edit-modal" %>
+ <!-- Central Modal Medium Success-->

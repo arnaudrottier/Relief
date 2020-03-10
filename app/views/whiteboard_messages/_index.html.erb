@@ -1,11 +1,17 @@
-<%= simple_form_for(@whiteboard_message) do |f| %>
-  <%= f.input :message %>
-  <%= f.input :image %>
-  <%= f.submit "Submit", class: "btn btn-dark" %>
-<% end %>
-
-<ul class="my-3" id="whiteboard">
+<ul class="whiteboard-container">
   <% @messages.each do |message|%>
     <%= render 'whiteboard_messages/message_card', message: message %>
   <% end %>
 </ul>
+
+
+<%= simple_form_for(@whiteboard_message) do |f| %>
+<div class="d-flex">
+  <div class="whiteboard-avatar-fill flex-grow-0">
+    <%= image_tag "user_photo.jpg", alt: "User Avatar", class: "avatar post-avatar" %>
+  </div>
+  <%= f.input :message, input_html: { class: "post_message" }, wrapper_html: { class: 'flex-grow-1' }, placeholder: "Post a message", label: false %>
+</div>
+    <%= f.input :image, label: false %>
+    <%= f.submit "Submit", class: "btn btn-dark" %>
+<% end %>

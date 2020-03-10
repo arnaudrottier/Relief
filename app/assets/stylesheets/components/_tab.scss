@@ -35,3 +35,11 @@ body {font-family: Arial;}
   padding: 6px 12px;
   border-top: none;
 }
+
+td, th, tr{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+  width: 100px;
+}
+
+
