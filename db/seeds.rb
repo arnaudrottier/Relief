@@ -62,6 +62,18 @@ names = [
   "Ralphie",
   "Trouni",
 ]
+
+pictures = [
+  "rich.jpg",
+  "will.jpeg",
+  "arnald.jpg",
+  "natalia.jpeg",
+  "doug.jpeg",
+  "trouni.jpeg"
+]
+
+
+
 bios = [
   "Hi, I'm Richie, from Malaysia. I’ve been learning Japanese for 2 years. I was working as a dentist in my home town. One of my hobbies is watching movies.",
   "Hey, I'm Will, from France. I’ve been learning Japanese for 30 days . I was working as a office worker in Paris. I enjoy listening to music.",
@@ -119,11 +131,12 @@ chores.each_with_index do |chore, index|
     room: new_room,
     bio: bios[index],
   )
-    user.save!
-
-  url = open('https://le-wagon-tokyo.herokuapp.com/batches/363/student').read
-  file = URI.open(url)
+  user.save!
+  file = File.open("app/assets/images/#{pictures[index]}")
   user.image.attach(io: file, filename: 'user.jpg', content_type: 'image/jpg')
+  # url = open('https://le-wagon-tokyo.herokuapp.com/batches/363/student').read
+  # file = URI.open(url)
+  # user.image.attach(io: file, filename: 'user.jpg', content_type: 'image/jpg')
 
 end
 
