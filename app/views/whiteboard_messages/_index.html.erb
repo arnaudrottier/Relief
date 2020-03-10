@@ -14,6 +14,9 @@
   </div>
   <%= f.input :message, input_html: { class: "post_message" }, wrapper_html: { class: 'flex-grow-1' }, placeholder: "Post a message", label: false %>
 </div>
-    <%= f.input :image, label: false %>
-    <%= f.submit "Submit", class: "btn btn-dark" %>
+    <%= f.input :image, label: false, input_html: { class: "post_picture" } %>
+    <%= f.submit "Submit", class: "btn btn-dark post_picture"  %>
 <% end %>
+
+
+
