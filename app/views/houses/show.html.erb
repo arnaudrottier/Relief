@@ -45,16 +45,15 @@
 
         <div class="d-flex justify-content-around">
           <div>
-        <div class="other-week border p-3 d-flex flex-column">
-          <p class="mr-3"><strong>Last Week:</strong></p>
-          <p class="mr-3"><%= @previous_room_chore.chore.name %></p>
-          <% if @previous_room_chore.status %>
-            <small class="mr-3">+10 pts earned</small>
-          <% else %>
-            <small class="mr-3">0 pts earned</small>
-          <% end %>
-        </div>
-
+            <div class="other-week border p-3 d-flex flex-column">
+              <p class="mr-3"><strong>Last Week:</strong></p>
+              <p class="mr-3"><%= @previous_room_chore.chore.name %></p>
+              <% if @previous_room_chore.status %>
+                <small class="mr-3">+10 pts earned</small>
+              <% else %>
+                <small class="mr-3">0 pts earned</small>
+              <% end %>
+            </div>
           </div>
 
           <div>
@@ -67,7 +66,7 @@
               <small class="mr-3">0 pts</small>
             <% end %>
           </div>
-          
+
           </div>
 
           <div>
