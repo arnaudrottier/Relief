@@ -13,11 +13,11 @@ module Merit
     include Merit::PointRulesMethods
 
     def initialize
-      score 10, on: 'room_chores#update', category: 'room_chore_activity' do |room_chore|
-        room_chore.status?
-      end
+      # score 10, on: 'room_chores#update', category: 'room_chore_activity' do |room_chore|
+      #   room_chore.status?
+      # end
 
-      # score 10, :on => 'users#create' do |user|
+      # score 0, :on => 'users#create' do |user|
       #   user
       # end
       # #needs to speak with user/room_chore

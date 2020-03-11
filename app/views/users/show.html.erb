@@ -18,10 +18,7 @@
     </div>
   </div>
   <% end %>
-  <%= link_to edit_user_path do %>
-    <i class="fas fa-pencil-alt d-flex justify-content-center"></i>
-  <% end %>
-  <h1 class="d-flex justify-content-center mt-3">200pts</h1>
+  <h2 class="d-flex justify-content-center mt-3"> Current chore points: <%= @user.points %></h2>
   <div class="row d-flex justify-content-center">
     <p><%= @user.bio %></p>
   </div>

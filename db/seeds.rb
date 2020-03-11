@@ -134,6 +134,7 @@ chores.each_with_index do |chore, index|
     bio: bios[index],
   )
   user.save!
+  user.add_points(rand(10)*10, category: 'room_chore_activity')
   file = File.open("app/assets/images/#{pictures[index]}")
   user.image.attach(io: file, filename: 'user.jpg', content_type: 'image/jpg')
   # url = open('https://le-wagon-tokyo.herokuapp.com/batches/363/student').read
