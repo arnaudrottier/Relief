@@ -1,6 +1,7 @@
 <div class="d-flex aling-content-between">
+
   <div class="card-profile-avatar position-sticky">
-    <div class="d-flex justify-content-center" style="padding-top: 70px;font-size: 25px;"><p style="margin: 0;">Total 200pts</p></div>
+    <div class="d-flex justify-content-center" style="padding-top: 70px;font-size: 25px;"><p style="margin: 0;">Current chore points: <%= @user.points %></p></div>
     <div class="d-flex justify-content-center" style="font-size: 25px;"> <i class="fas fa-star"></i><i class="far fa-star"></i></div>
     <div class="d-flex justify-content-center"><a><%= cl_image_tag(@user.image.key, :gravity => :face, class: :avatarlarge ) %></a></div>
     <div class="d-flex justify-content-center">
@@ -16,7 +17,9 @@
       <p class="align-self-end my-3" style="font-size: 25px;"><%= @user.room.number %></p>
     </div>
       <p class="d-flex justify-content-center my-3" style="font-size: 25px;"><%= @user.created_at %></p>
-    </div>
+  </div>
+
+
       <div class="card-profile-right" style="background-color: white;">
         <h2 class="d-flex justify-content-center my-3" style="padding-top: 55px; text-decoration: underline;">About me</h2>
         <div class="card-bio m-4">
@@ -27,6 +30,7 @@
         <div class="d-flex justify-content-center">
           <h3 class="card-amenity-profile">Booked Amenities</h3>
         </div>
+
         <div>
           <% @amenities.each do |amenity| %>
           <% @user.future_bookings(amenity).each do |booking| %>
@@ -40,14 +44,7 @@
           <% end %>
           <% end %>
         </div>
-  </div>
-  <% end %>
-  <h2 class="d-flex justify-content-center mt-3"> Current chore points: <%= @user.points %></h2>
-  <div class="row d-flex justify-content-center">
-    <p><%= @user.bio %></p>
-  </div>
 
-       </div>
-    </div>
+
 </div>
 
