@@ -10,7 +10,9 @@
       <% end %>
   </div>
   <div class="whiteboard-message-actions">
-    <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
-    <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+    <% if message.user == current_user %>
+      <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
+      <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+    <% end %>
   </div>
 </div>
