@@ -1,4 +1,5 @@
 require "open-uri"
+require 'faker'
 
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
@@ -87,40 +88,44 @@ bios = [
 amenities = [
   {
     name:'Iron',
-    fa_class: 'fas fa-paper-plane'
+    fa_class: 'iron.png'
   },
   {
     name:'Vacuum',
-    fa_class: 'fas fa-broom'
+    fa_class: 'vacuum.png'
   },
   {
     name:'Shower',
-    fa_class: 'fas fa-bath'
+    fa_class: 'shower.png'
+  },
+  {
+    name:'Hair Dryer',
+    fa_class: "hair_dryer.png"
   },
   {
     name:'Dryer',
-    fa_class: 'fas fa-tint-slash'
+    fa_class: 'dryer.png'
 
   },
   {
     name:'Washing Machine',
-    fa_class: 'fas fa-tint'
+    fa_class: 'washing_machine.png'
   },
   {
     name:'Cinema Room',
-    fa_class: 'fas fa-film'
+    fa_class: 'cinema_room.png'
   },
    {
     name:'Kitchen',
-    fa_class: 'fas fa-blender'
+    fa_class: 'kitchen.png'
 
   },
   {
     name:'Dining Room',
-    fa_class: "fas fa-utensils"
+    fa_class: "dining_room.png"
   }
-
 ]
+
 
 chores.each_with_index do |chore, index|
   new_chore = Chore.create!(chore)
@@ -143,6 +148,7 @@ end
 
 6.times do |n|
   Chore.all.each_with_index do |chore, index|
+
     room_chore = RoomChore.new(
       start_date: Date.new(2020,3,9),
       end_date: Date.new(2020,3,15),
@@ -150,12 +156,26 @@ end
       period: Period.convert_to_period(Date.today + (n - 1).weeks),
       room: Room.all[(index + n) % Room.count]
     )
-      room_chore.save!
+
+    room_chore.save!
   end
 end
 
 amenities.each do |amenity|
   new_amenity = Amenity.create!(amenity)
+end
+
+
+10.times do |n|
+    start_booking = Faker::Time.between(from: DateTime.now , to: DateTime.now + 3)
+    end_booking = start_booking + (900 * rand(1..10))
+
+    new_booking = Booking.create!(
+      start_date: start_booking,
+      end_date: end_booking,
+      room: Room.all.sample,
+      amenity: Amenity.all.sample
+      )
 end
 
 

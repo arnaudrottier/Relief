@@ -2,7 +2,7 @@
   <% @amenities.each do |amenity| %>
     <div style="display:flex; flex-direction: column">
       <div type="button" class="btn amenity-card mr-3 border" data-toggle="modal" data-target="#amenityModal-<%= amenity.id %>">
-        <p><i class="<%= amenity.fa_class %> fa-3x"></i></p>
+        <p><%= image_tag amenity.fa_class, width: 100 %></p>
         <small><p><%= amenity.name %></small></p>
       </div>
 
@@ -12,7 +12,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="amenityModal-<%=amenity.id%>Label">Book <%= amenity.name %> <i class="<%= amenity.fa_class %>"></i></h5>
+            <h5 class="modal-title" id="amenityModal-<%=amenity.id%>Label">Book <%= amenity.name %> <%= image_tag amenity.fa_class , width: 50 %></h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
