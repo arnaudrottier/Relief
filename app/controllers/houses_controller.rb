@@ -3,7 +3,6 @@ class HousesController < ApplicationController
     if current_user.room.nil?
       current_user.room = Room.last
     end
-    @room_chores = RoomChore.where(period: Period.convert_to_period(Date.today + (n - 1).weeks)
 
     @whiteboard_message = WhiteboardMessage.new
     @messages = WhiteboardMessage.last(10)
