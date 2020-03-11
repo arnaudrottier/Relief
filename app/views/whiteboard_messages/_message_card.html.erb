@@ -1,4 +1,4 @@
-<div class="whiteboard-message">
+<div class="whiteboard-message" id="message-<%= raw message.id %>">
   <% if message && message.user %>
     <%= cl_image_tag message.user.image.key, alt: "alttext", class: "avatarlg" %>
   <% end %>
@@ -10,7 +10,12 @@
       <% end %>
   </div>
   <div class="whiteboard-message-actions">
-    <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
-    <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+    <% if message.user == current_user %>
+      <%= link_to whiteboard_message_path(message), method: :delete, remote: true do %>
+        <i class="far fa-trash-alt"></i>
+      <% end %>
+
+    <% end %>
   </div>
+
 </div>

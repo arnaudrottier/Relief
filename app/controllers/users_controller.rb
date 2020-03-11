@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   def show
     @user = User.find_by(id: params[:id])
+    @amenities = Amenity.all
+    @bookings = Booking.all
   end
 
   def edit

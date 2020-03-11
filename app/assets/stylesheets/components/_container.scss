@@ -3,8 +3,18 @@
   min-width: 100%;
 }
 
-.container-bio {
-  border: 1px solid;
-  width: 600px;
-  height: 208px;
+.container-profile {
+background-color: white;
+}
+
+.meguro-container {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-size: 30px;
+    color: #FFFFEA;
+}
+
+.meguro-div {
+  position: relative;
 }

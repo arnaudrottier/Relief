@@ -58,10 +58,10 @@ emails = [
 
 names = [
   "Richie",
-  "Bill",
-  "Arnaldo",
-  "Orangina",
-  "Ralphie",
+  "Will",
+  "Arnaud",
+  "Natalia",
+  "Doug",
   "Trouni",
 ]
 
@@ -77,12 +77,12 @@ pictures = [
 
 
 bios = [
-  "Hi, I'm Richie, from Malaysia. I’ve been learning Japanese for 2 years. I was working as a dentist in my home town. One of my hobbies is watching movies.",
-  "Hey, I'm Will, from France. I’ve been learning Japanese for 30 days . I was working as a office worker in Paris. I enjoy listening to music.",
-  "My name is Arnald, from South Korea. I’ve been learning English for 30 days .I am an Japanese teacher. One of my hobbies is cooking ",
-  "Natalia, from Pakistan. I’ve been learning Japanese for 5 weeks .I am a student. I enjoy listening to music.",
-  "Hi, I'm Doug. I'm a doctor. One of my hobbies is going to restaurants.",
-  "Trouni! I’m from Russia. I was working as a English teacher in my home town. One of my hobbies is cooking chocolatine.",
+  "Hi, I'm Rich, from Philadelphia. I’ve been learning Japanese for 2 years. I was working as a dentist in my home town. One of my hobbies is watching movies.",
+  "Hey, I'm Will, from San francisco. I’ve been learning Japanese for 30 days . I was working as a office worker in Paris. I enjoy listening to music.",
+  "My name is Arnaud, from France. I’ve been learning English for 30 days .I am an Japanese teacher. One of my hobbies is cooking ",
+  "Natalia, from Brazil. I’ve been learning Japanese for 5 weeks .I am a student. I enjoy listening to music.",
+  "Hi, I'm Douglas. I'm a doctor. One of my hobbies is going to restaurants.",
+  "Trouni! I’m from France. I was working as a English teacher in my home town. One of my hobbies is cooking chocolatine.",
 ]
 
 amenities = [
@@ -138,6 +138,7 @@ chores.each_with_index do |chore, index|
     bio: bios[index],
   )
   user.save!
+  user.add_points(rand(10)*10, category: 'room_chore_activity')
   file = File.open("app/assets/images/#{pictures[index]}")
   user.image.attach(io: file, filename: 'user.jpg', content_type: 'image/jpg')
   # url = open('https://le-wagon-tokyo.herokuapp.com/batches/363/student').read
@@ -154,12 +155,15 @@ end
       end_date: Date.new(2020,3,15),
       chore: chore,
       period: Period.convert_to_period(Date.today + (n - 1).weeks),
-      room: Room.all[(index + n) % Room.count]
+      room: Room.all[(index + n) % Room.count],
+      status: [true, false].sample
     )
 
     room_chore.save!
   end
 end
+
+puts "creating amenities and bookings for them..."
 
 amenities.each do |amenity|
   new_amenity = Amenity.create!(amenity)
@@ -178,9 +182,4 @@ end
       )
 end
 
-
-
-
-
-
-puts "created rooms, room_chores, chores and amenities "
+puts "created rooms, room_chores, chores, amenities and bookings! BooyaH!"
