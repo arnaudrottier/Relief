@@ -10,6 +10,7 @@ require "open-uri"
 
 puts "Destroying Users, Rooms, Chores and Amenities"
 Booking.destroy_all
+WhiteboardMessage.destroy_all
 User.destroy_all
 Room.destroy_all
 RoomChore.destroy_all
@@ -69,7 +70,7 @@ pictures = [
   "arnald.jpg",
   "natalia.jpeg",
   "doug.jpeg",
-  "trouni.jpeg"
+  "Trouni.JPG"
 ]
 
 
@@ -121,6 +122,7 @@ amenities = [
 
 ]
 
+
 chores.each_with_index do |chore, index|
   new_chore = Chore.create!(chore)
   new_room = Room.create!(number: index + 101)
@@ -147,19 +149,25 @@ end
       end_date: Date.new(2020,3,15),
       chore: chore,
       period: Period.convert_to_period(Date.today + (n - 1).weeks),
-      room: Room.all[(index + n) % Room.count]
+      room: Room.all[(index + n) % Room.count],
+      status: [true, false].sample
     )
       room_chore.save!
   end
 end
 
-amenities.each do |amenity|
-  new_amenity = Amenity.create!(amenity)
+puts "creating amenities an bookings for them..."
+
+amenities.each_with_index do |amenity, index|
+  new_amenity = Amenity.new(amenity)
+  new_amenity.save!
 end
 
+new_booking = Booking.new
+new_booking.amenity = Amenity.find_by(name: "Cinema Room")
+new_booking.room = User.find_by(first_name: "Richie").room
+new_booking.start_date = DateTime.new(2020,03,20, 12, 0, 0)
+new_booking.end_date = DateTime.new(2020,03,20, 18, 0, 0)
+new_booking.save
 
-
-
-
-
-puts "created rooms, room_chores, chores and amenities "
+puts "created rooms, room_chores, chores, amenities and bookings! BooyaH!"

@@ -2,11 +2,11 @@
  <div class="row justify-content-center my-3">
     <div class="card" style="width: 500px; height: 500px;">
       <div class="card-header text-center">
-        <h4><%= @room_chore.chore.name %> Chore completed!</h4>
+        <h3><%= @room_chore.chore.name %> Chore completed!</h3>
       </div>
       <div class="card-body">
       <%= simple_form_for @room_chore do |f| %>
-      <%= f.input :status  %>
+      <%= f.hidden_field :status, value: true %>
       <%= f.input :notes  %>
       <%= f.input :period  %>
 
@@ -22,8 +22,8 @@
      <!--Content-->
      <div class="modal-content">
        <!--Header-->
-       <div class="modal-header d-flex justify-content-center">
-         <h1 class="heading lead">Chore Done!</h1>
+       <div class="modal-header d-flex justify-content-center" style="background-color: #1871BF;">
+         <h1 class="heading lead" style="color: #FFFFEA; font-family: Nova Square">Chore Completed?</h1>
        </div>
        <!--Body-->
        <div class="modal-body">
@@ -39,10 +39,8 @@
        </div>
        <!--Footer-->
        <div class="modal-footer justify-content-center">
-
-        <%= f.submit class: 'btn btn-outline-success' %>
-
-         <a type="button" class="btn btn-outline-success waves-effect" data-dismiss="modal">Cancel</a>
+        <input type="submit" name="commit" value="Yes" class="btn btn-primary" data-disable-with="Update Room chore">
+        <a type="button" class="btn btn-primary waves-effect" style="color: #FFFFEA;" data-dismiss="modal">No</a>
         <% end %>
 
        </div>

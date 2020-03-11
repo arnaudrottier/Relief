@@ -11,7 +11,7 @@
   margin-left: 10px;
 }
 .card-chore-name:hover {
-  color: #bbbbbb;
+  color: #BBBBBB;
   width: 109px;
   margin-right: 10px;
   margin-left: 10px;
@@ -19,15 +19,10 @@
 
 
 .card-header{
-  background: #1871bf;
+  background: #1871BF;
 }
 
 .card-body{
-<<<<<<< HEAD
-  background: #D3D3D3;
-<<<<<<< HEAD
-=======
-=======
   background: #F2F2F2;
 }
 
@@ -38,7 +33,6 @@ h3 {
   margin: 0;
   color: #FFFFEA;
   font-family: 'Nova Square', cursive;
->>>>>>> bccdedf86845b38b1bed5fdd621d3ea4f584478a
 }
 
 h4 {
@@ -69,7 +63,6 @@ body { font-family: sans-serif; }
 
 .card-profile.is-flipped {
   transform: rotateY(180deg);
->>>>>>> 19ca497d9f99ee5ffb8fae6c1f51a1c7f6778bbd
 }
 
 .card__face {
@@ -98,5 +91,3 @@ body { font-family: sans-serif; }
 .card-amenity {
   background-color: white;
 }
-
-

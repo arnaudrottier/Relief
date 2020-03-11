@@ -17,7 +17,7 @@ class Booking < ApplicationRecord
   end
 
   def formatted_end_time
-    start_date.strftime("%H:%M")
+    end_date.strftime("%H:%M")
   end
 
 

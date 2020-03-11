@@ -7,13 +7,17 @@
   }
 }
 
+.whiteboard-card {
+  box-shadow: 5px, 10px;
+}
+
 .whiteboard-message {
   display: flex;
   align-items: center;
-  margin-bottom: 8px;
+  // margin-bottom: 8px;
   background: white;
   padding: 8px 16px;
-  border: 1px solid rgb(235,235,235);
+  // border: 1px solid rgb(235,235,235);
 }
 
 .whiteboard-message .whiteboard-message-content {
@@ -55,14 +59,20 @@
   height: 61px;
   width: 85px;
   margin-left: 40px;
-  padding-top: 10px;
-  padding-left: 23px;
-  background: white;
+  padding-left: 10px;
+
 }
 
 .post_message {
   flex-grow: 1;
 }
+
+.post_picture {
+  flex-grow: 1;
+  margin-left: 125px;
+
+}
+
 
 #whiteboard_message_message {
   flex-grow: 0;
