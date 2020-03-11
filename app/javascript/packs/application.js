@@ -13,3 +13,4 @@ let card = document.querySelector('.card-profile');
 card.addEventListener( 'click', function() {
   card.classList.toggle('is-flipped');
 });
+

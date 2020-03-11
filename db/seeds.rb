@@ -57,10 +57,10 @@ emails = [
 
 names = [
   "Richie",
-  "Bill",
-  "Arnaldo",
-  "Orangina",
-  "Ralphie",
+  "Will",
+  "Arnaud",
+  "Natalia",
+  "Doug",
   "Trouni",
 ]
 
@@ -76,12 +76,12 @@ pictures = [
 
 
 bios = [
-  "Hi, I'm Richie, from Malaysia. I’ve been learning Japanese for 2 years. I was working as a dentist in my home town. One of my hobbies is watching movies.",
-  "Hey, I'm Will, from France. I’ve been learning Japanese for 30 days . I was working as a office worker in Paris. I enjoy listening to music.",
-  "My name is Arnald, from South Korea. I’ve been learning English for 30 days .I am an Japanese teacher. One of my hobbies is cooking ",
-  "Natalia, from Pakistan. I’ve been learning Japanese for 5 weeks .I am a student. I enjoy listening to music.",
-  "Hi, I'm Doug. I'm a doctor. One of my hobbies is going to restaurants.",
-  "Trouni! I’m from Russia. I was working as a English teacher in my home town. One of my hobbies is cooking chocolatine.",
+  "Hi, I'm Rich, from Philadelphia. I’ve been learning Japanese for 2 years. I was working as a dentist in my home town. One of my hobbies is watching movies.",
+  "Hey, I'm Will, from San francisco. I’ve been learning Japanese for 30 days . I was working as a office worker in Paris. I enjoy listening to music.",
+  "My name is Arnaud, from France. I’ve been learning English for 30 days .I am an Japanese teacher. One of my hobbies is cooking ",
+  "Natalia, from Brazil. I’ve been learning Japanese for 5 weeks .I am a student. I enjoy listening to music.",
+  "Hi, I'm Douglas. I'm a doctor. One of my hobbies is going to restaurants.",
+  "Trouni! I’m from France. I was working as a English teacher in my home town. One of my hobbies is cooking chocolatine.",
 ]
 
 amenities = [
