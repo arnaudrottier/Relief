@@ -1,0 +1,12 @@
+<%= simple_form_for(message, remote: true) do |f| %>
+<div class="d-flex">
+  <div class="whiteboard-avatar-fill flex-grow-0">
+
+    <%#= image_tag "user_photo.jpg", alt: "User Avatar", class: "avatar post-avatar" %>
+    <%= cl_image_tag current_user.image.key, alt: "alttext", class: "border avatarlg" %>
+  </div>
+  <%= f.input :message, input_html: { class: "post_message" }, wrapper_html: { class: 'flex-grow-1' }, placeholder: "Post a message", label: false %>
+</div>
+    <%= f.input :image, label: false, input_html: { class: "post_picture" } %>
+    <%= f.submit "Submit", class: "btn btn-dark post_picture"  %>
+<% end %>
