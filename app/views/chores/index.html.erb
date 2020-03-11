@@ -23,7 +23,7 @@
                       <% end %>
                  </thead>
                   <tbody>
-                    <% @room_chores.each do |room_chore| %>
+                    <% @previous_room_chores.each do |room_chore| %>
                     <%= render "room_chores/table_row", room_chore: room_chore %>
                     <% end %>
                   </tbody>
@@ -73,7 +73,7 @@
                       <% end %>
                  </thead>
                   <tbody>
-                    <% @room_chores.each do |room_chore| %>
+                    <% @next_room_chores.each do |room_chore| %>
                     <%= render "room_chores/table_row", room_chore: room_chore %>
                     <% end %>
                   </tbody>
@@ -83,25 +83,25 @@
           </div>
         </div>
       </div>
-      <script>
-        function openWeek(evt, cityName) {
-          var i, tabcontent, tablinks;
-          tabcontent = document.getElementsByClassName("tabcontent");
-          for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-          }
-          tablinks = document.getElementsByClassName("tablinks");
-          for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" active", "");
-          }
-          document.getElementById(cityName).style.display = "block";
-          evt.currentTarget.className += " active";
-        }
-        document.getElementById("defaultOpen").click();
-      </script>
     </div>
   </div>
 </div>
+<script>
+  function openWeek(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+  document.getElementById("defaultOpen").click();
+</script>
 
 
 
