@@ -1,4 +1,5 @@
 require "open-uri"
+require 'faker'
 
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
@@ -87,39 +88,42 @@ bios = [
 amenities = [
   {
     name:'Iron',
-    fa_class: 'fas fa-paper-plane'
+    fa_class: 'iron.png'
   },
   {
     name:'Vacuum',
-    fa_class: 'fas fa-broom'
+    fa_class: 'vacuum.png'
   },
   {
     name:'Shower',
-    fa_class: 'fas fa-bath'
+    fa_class: 'shower.png'
+  },
+  {
+    name:'Hair Dryer',
+    fa_class: "hair_dryer.png"
   },
   {
     name:'Dryer',
-    fa_class: 'fas fa-tint-slash'
+    fa_class: 'dryer.png'
 
   },
   {
     name:'Washing Machine',
-    fa_class: 'fas fa-tint'
+    fa_class: 'washing_machine.png'
   },
   {
     name:'Cinema Room',
-    fa_class: 'fas fa-film'
+    fa_class: 'cinema_room.png'
   },
    {
     name:'Kitchen',
-    fa_class: 'fas fa-blender'
+    fa_class: 'kitchen.png'
 
   },
   {
     name:'Dining Room',
-    fa_class: "fas fa-utensils"
+    fa_class: "dining_room.png"
   }
-
 ]
 
 
@@ -145,6 +149,7 @@ end
 
 6.times do |n|
   Chore.all.each_with_index do |chore, index|
+
     room_chore = RoomChore.new(
       start_date: Date.new(2020,3,9),
       end_date: Date.new(2020,3,15),
@@ -153,22 +158,28 @@ end
       room: Room.all[(index + n) % Room.count],
       status: [true, false].sample
     )
-      room_chore.save!
+
+    room_chore.save!
   end
 end
 
-puts "creating amenities an bookings for them..."
+puts "creating amenities and bookings for them..."
 
-amenities.each_with_index do |amenity, index|
-  new_amenity = Amenity.new(amenity)
-  new_amenity.save!
+amenities.each do |amenity|
+  new_amenity = Amenity.create!(amenity)
 end
 
-new_booking = Booking.new
-new_booking.amenity = Amenity.find_by(name: "Cinema Room")
-new_booking.room = User.find_by(first_name: "Richie").room
-new_booking.start_date = DateTime.new(2020,03,20, 12, 0, 0)
-new_booking.end_date = DateTime.new(2020,03,20, 18, 0, 0)
-new_booking.save
+
+10.times do |n|
+    start_booking = Faker::Time.between(from: DateTime.now , to: DateTime.now + 3)
+    end_booking = start_booking + (900 * rand(1..10))
+
+    new_booking = Booking.create!(
+      start_date: start_booking,
+      end_date: end_booking,
+      room: Room.all.sample,
+      amenity: Amenity.all.sample
+      )
+end
 
 puts "created rooms, room_chores, chores, amenities and bookings! BooyaH!"

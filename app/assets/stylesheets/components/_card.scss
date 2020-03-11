@@ -26,18 +26,19 @@
   background: #F2F2F2;
 }
 
-h2 {
-}
+h2 {		
+ }		
 
-h3 {
-  margin: 0;
-  color: #FFFFEA;
-  font-family: 'Nova Square', cursive;
-}
+  h3 {		
+   margin: 0;		
+   color: #FFFFEA;		
+   font-family: 'Nova Square', cursive;		
+ }		
 
-h4 {
-  margin: 0;
-}
+ 
+  h4 {		
+   margin: 0;		
+ }
 
 .card-profile-avatar {
   position: sticky;
@@ -82,6 +83,13 @@ height:50px;
   border-radius: 4px;
   width: 755px;
   box-shadow: 0 0px 9px rgba(0,0,0,0.1)
+}
+
+.amenity-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  box-shadow: 10px;
 }
 
 .card-meguro-profile {
