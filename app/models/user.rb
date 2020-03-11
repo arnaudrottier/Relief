@@ -33,4 +33,8 @@ class User < ApplicationRecord
   def future_bookings(amenity)
     amenity.bookings.where("room_id = ? AND start_date > ?", room.id, Date.today)
   end
+
+   def formatted_created_day
+    created_at.strftime("%b %d, %Y")
+  end
 end
