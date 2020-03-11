@@ -14,4 +14,8 @@ class Period
   def self.last
     convert_to_period(Date.today - 7.days)
   end
+
+  def self.previous
+    last
+  end
 end
