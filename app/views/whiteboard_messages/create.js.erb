@@ -1,0 +1,16 @@
+function appendMessage(innerHTML) {
+  var topMessage = document.querySelector("#adjacent-message-div");
+  topMessage.insertAdjacentHTML("afterend", innerHTML);
+}
+
+function refreshForm(innerHTML) {
+  var formContainer = document.querySelector(".whiteboard-form");
+  formContainer.innerHTML = innerHTML;
+}
+
+<% if @whiteboard_message.errors.any? %>
+  refreshForm("<%= j render 'form', message: Message.new %>");
+<% else %>
+  appendMessage("<%= j render 'message_card', message: @whiteboard_message %>");
+  refreshForm("<%= j render 'form', message: WhiteboardMessage.new %>");
+<% end %>

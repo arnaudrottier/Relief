@@ -1,0 +1,8 @@
+function deleteMessage(id) {
+  document.querySelector(`#message-${id}`).remove();
+}
+
+<% if @whiteboard_message.errors.any? %>
+<% else %>
+  deleteMessage("<%= raw @whiteboard_message.id %>");
+<% end %>
