@@ -3,7 +3,10 @@ class HousesController < ApplicationController
     if current_user.room.nil?
       current_user.room = Room.last
     end
-    @room_chores = current_user.room.room_chores
+    @room_chores = RoomChore.where(period: Period.current)
+    @previous_room_chores = RoomChore.where(period: Period.current - 1)
+    @current_room_chores = RoomChore.where(period: Period.current)
+    @next_room_chores = RoomChore.where(period: Period.current + 1)
     @whiteboard_message = WhiteboardMessage.new
     @messages = WhiteboardMessage.last(10)
     @amenities = Amenity.all
