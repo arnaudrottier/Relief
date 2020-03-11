@@ -88,6 +88,9 @@ body { font-family: sans-serif; }
   transform: rotateY(180deg);
 }
 
-.card-amenity {
-  background-color: white;
+.amenity-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  box-shadow: 10px;
 }
