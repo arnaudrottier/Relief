@@ -1,11 +1,11 @@
 require 'line/bot'
 
 class Line::BotController < ApplicationController
-  before_action :client, only: [:recieve]
+  before_action :client, only: [:receive]
   skip_before_action :authenticate_user!
-  skip_before_action :verify_authenticity_token, only: [:recieve]
+  skip_before_action :verify_authenticity_token, only: [:receive]
 
-  def recieve
+  def receive
     body = request.body.read
 
     signature = request.env['HTTP_X_LINE_SIGNATURE']
