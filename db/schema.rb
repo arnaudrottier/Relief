@@ -162,7 +162,6 @@ ActiveRecord::Schema.define(version: 2020_03_12_104201) do
     t.text "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.date "post_date"
     t.bigint "user_id"
     t.index ["user_id"], name: "index_whiteboard_messages_on_user_id"
   end
