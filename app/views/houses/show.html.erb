@@ -69,12 +69,10 @@
                     <p class="mr-3"><%= @previous_room_chore.chore.name %>
                       <i class="far fa-check-circle mr-2" style="color:#1EDD88;"></i>
                     </p>
-                   <p><small class="mr-3">10 pts earned</small></p>
                    <% else %>
                    <p class="mr-3"><%= @previous_room_chore.chore.name %>
                     <i class="far fa-check-circle mr-2" style="color:#FD1015;"></i>
                   </p>
-                   <p><small class="mr-3">0 pts earned</small></p>
                    <% end %>
                 </div>
               </a>
@@ -88,10 +86,8 @@
                     <%= @current_room_chore.chore.name %>
                     <% if @current_room_chore.status %>
                       <i class="far fa-check-circle mr-2" style="color:#1EDD88;"></i>
-                      <p><small class="mr-3">10 pts earned</small></p>
                     <% else %>
                       <i class="far fa-check-circle mr-2" style="color:#FD1015;"></i>
-                      <p><small class="mr-3">0 pts earned</small></p>
                     <% end %>
                   </div>
                 </div>
@@ -106,12 +102,10 @@
                     <p class='mr-3'><%= @next_room_chore.chore.name %>
                       <i class="far fa-check-circle mr-2" style="color:#1EDD88;"></i>
                     </p>
-                    <p><small class="mr-3">10 pts earned</small></p>
-                  <% else %>
+                   <% else %>
                   <p class="mr-3"><%= @next_room_chore.chore.name %>
                     <i class="far fa-check-circle mr-2" style="color:#FD1015;"></i>
                   </p>
-                    <p><small class="mr-3">0 pts earned</small></p>
                   <% end %>
                 </div>
               </a>
