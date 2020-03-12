@@ -16,8 +16,7 @@
     </div>
   </div>
 
-<div class="house-members-container">
-  <!-- <div class="col-12"> -->
+<div class="house-members-container container">
   <% @users.each do |user| %>
       <div class="d-flex flex-column text-center mt-5">
         <i><%= cl_image_tag user.image.key, class: :avatarlg %></i>
@@ -101,7 +100,7 @@
                   </p>
                   <p><small class="mr-3">10 pts earned</small></p>
                 <% else %>
-                <p class="mr-3"><%= @previous_room_chore.chore.name %>
+                <p class="mr-3"><%= @next_room_chore.chore.name %>
                   <i class="far fa-square mr-2" style="color:#FD1015;"></i>
                 </p>
                   <p><small class="mr-3">0 pts earned</small></p>
@@ -123,6 +122,19 @@
         </div>
         <div class="card-body">
           <%= render "amenities/summary" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row justify-content-center my-3">
+    <div class="col-12">
+      <div class="card wide-container">
+        <div class="card-header text-center">
+          <h3>Map</h3>
+        </div>
+        <div class="card-body">
+          <iframe src="https://www.google.com/maps/d/embed?mid=1XqreEWk5L-esoXyiEMNx8ZUfJYBUsZOO" width="100%" height="480"></iframe></iframe>
         </div>
       </div>
     </div>
