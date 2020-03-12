@@ -1,0 +1,17 @@
+
+<div class="row justify-content-center my-3">
+  <div class="card" style="width: 500px; height: 500px;">
+<!--     <div class="card-header text-center">
+      <h3><%#= room_chore.chore.name %></h3>
+    </div> -->
+    <div class="card-body">
+      <%= simple_form_for room_chore do |f| %>
+      <%= f.hidden_field :status, value: true %>
+      <%= f.input :notes  %>
+      <%= f.submit %>
+      <% end %>
+    <!-- <button type="button" id="room-chore-submit" class="btn btn-primary mt-3" data-toggle="modal" data-target="#centralModalSuccess">Completed
+    </button> -->
+    </div>
+  </div>
+</div>
