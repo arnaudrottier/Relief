@@ -7,8 +7,5 @@ class Amenity < ApplicationRecord
     bookings.order(start_date: :asc).first
   end
 
-  def next_booking_formatted
-    next_booking.strftime("%b %e %l: %M")
-  end
 
 end

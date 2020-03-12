@@ -7,7 +7,7 @@
         <% if amenity.next_booking %>
         <p>Next Booked: <%= amenity.next_booking.start_date.strftime("%b %e, %l:%M %p") %><p>
         <% else  %>
-          <p>Book now</p>
+          <p>Available</p>
         <% end %>
       </div>
 

@@ -9,7 +9,7 @@ require 'faker'
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-puts "Destroying Users, Rooms, Chores and Amenities"
+puts "Destroying Users, Rooms, Chores, Bookings and Amenities"
 Booking.destroy_all
 WhiteboardMessage.destroy_all
 User.destroy_all
@@ -17,7 +17,7 @@ Room.destroy_all
 RoomChore.destroy_all
 Chore.destroy_all
 Amenity.destroy_all
-puts "Destroyed Users, Rooms, Chores and Amenities"
+puts "Destroyed Users, Rooms, Chores, Bookings and Amenities"
 
 
 chores = [
@@ -153,7 +153,7 @@ end
       if n > 1
         false
       elsif n < 1
-        true
+        false
       else
         [true, false].sample
       end
