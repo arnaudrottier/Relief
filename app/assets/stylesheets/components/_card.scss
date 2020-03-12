@@ -42,36 +42,59 @@ h2 {
 
 .card-profile-avatar {
   position: sticky;
-  top: 0px;
+  top: 48px;
   margin: 3px 3px 3px 30px;
-  background-color: white;
+  // background-color: white;
   border-radius: 4px;
   width: 600px;
   height: 100vh;
-  box-shadow: 0 0px 9px rgba(0,0,0,0.1)
+  // box-shadow: 0 0px 9px rgba(0,0,0,0.1)
 
 }
 
 .card-bio {
-  background: #ffffff;
-  box-shadow:  -5px -5px 26px #e3e3e3,
-                5px 5px 26px #ffffff;
-  padding: 40px 50px 30px 60px;
-  margin-left: 130px;
-  width: 500px;
-  height: 200px;
+  // background: #ffffff;
+  // box-shadow:  -5px -5px 26px #e3e3e3,
+  //               5px 5px 26px #ffffff;
+  // padding: 40px 50px 30px 60px;
+  // margin-left: 130px;
+  // width: 500px;
+  // height: 200px;
+  padding: 48px;
 }
-.card-key-icon img {
+
+.card-bio p {
+  color: gray;
+  margin: 0;
+}
+.card-profile-edit {
+  position: absolute;
+  right: 48px;
+}
+.card-profile-edit {
+  width: 30px;
+  height:30px;
+}
+
+.card-key-icon {
 width: 50px;
 height:50px;
 }
 
-.fa-pencil-alt {
-  text-decoration: none;
-  color: black;
+.card-profile {
+  background-color: white;
+  margin: 48px;
 }
 
-.card-amenity-profile{
+
+.card-profile-name {
+  font-weight: bolder;
+  color: #1871BF;
+  font-size: 64px;
+  margin: 16px;
+}
+
+.card-profile-title{
   background: #1871BF;
   display: flex;
   justify-content: center;
@@ -79,11 +102,13 @@ height:50px;
   padding-top: 20px;
 }
 
+.card-profile-amenity {
+  margin-right: 24px;
+  width: 120px;
+}
+
 .card-profile-right {
-  margin-top: 3px;
-  border-radius: 4px;
   width: 755px;
-  box-shadow: 0 0px 9px rgba(0,0,0,0.1)
 }
 
 .amenity-grid {
@@ -110,6 +135,7 @@ grid-gap: 16px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   box-shadow: 10px;
+  padding: 40px;
 }
 
 .fa-envelope {
@@ -122,12 +148,10 @@ width: 40px;
 
 .card-contact-profile {
   background: #ffffff;
-  box-shadow:  -5px -5px 26px #e3e3e3,
-                5px 5px 26px #ffffff;
-  padding: 40px 50px 30px 60px;
-  width: 400px;
+  margin: 48px;
+  padding: 24px;
   height: 200px;
-  margin-left: 100px;
+
 
 .other-week {
   border-radius: 30px;
