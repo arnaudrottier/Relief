@@ -5,9 +5,9 @@
     <div class="show-banner d-flex flex-column justify-content-center">
       <div class="meguro-container d-flex justify-content-end pr-2">
         <p>
-          <% if Time.now >= Time.parse("0:01") && Time.now <= Time.parse("12:00") %>
+          <% if Time.zone.now >= Time.zone.parse("0:01") && Time.zone.now <= Time.zone.parse("12:00") %>
             <i class="fas fa-coffee mr-2" style="color:#4B371B"></i>Good Morning, <%= current_user.first_name %>
-          <% elsif Time.now >= Time.parse("12:01") && Time.now <= Time.parse("17:00") %>
+          <% elsif Time.zone.now >= Time.zone.parse("12:01") && Time.zone.now <= Time.zone.parse("17:00") %>
             <i class="fas fa-sun mr-2" style="color:#f9cd1b"></i>Good Afternoon, <%= current_user.first_name %>
           <% else %>
             <i class="fas fa-cloud-moon mr-2"></i>Good Evening, <%= current_user.first_name %>
