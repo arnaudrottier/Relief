@@ -93,6 +93,13 @@ height:50px;
   box-shadow: 10px;
 }
 
+.amenity-card {
+  border-radius: 30px;
+  background: linear-gradient(145deg, #d2d4d5, #f9fdfe);
+  box-shadow:  10px 10px 30px #c6c9c9,
+               -10px -10px 30px #ffffff;
+}
+
 .card-amenity-icon {
 display: grid;
 grid-template-columns: 1fr 1fr 1fr;
@@ -108,6 +115,7 @@ grid-gap: 16px;
 .fa-envelope {
 width: 40px;
 }
+
 .booking-profile {
   padding-top:25px;
 }
@@ -120,4 +128,25 @@ width: 40px;
   width: 400px;
   height: 200px;
   margin-left: 100px;
+
+.other-week {
+  border-radius: 30px;
+  background: linear-gradient(145deg, #d2d4d5, #f9fdfe);
+  box-shadow:  10px 10px 30px #c6c9c9,
+               -10px -10px 30px #ffffff;
+}
+
+.this-week {
+  border-radius: 30px;
+  background: linear-gradient(145deg, #d2d4d5, #f9fdfe);
+  box-shadow:  10px 10px 30px #c6c9c9,
+               -10px -10px 30px #ffffff;
+}
+
+a.card-link {
+  text-decoration: none;
+  color: black;
+  a.card-link {
+    color: inherit;
+  }
 }

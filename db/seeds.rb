@@ -43,7 +43,7 @@ chores = [
   },
   {
     name:'Trash',
-    description:'Bins are separated into PET Bottles, Assorted Glass, Cans, and Burnable Trash. Once a bin is full, please take it to the corressponding can outside: the trashmen will dispose of whatever is in the can on pickup day!'
+    description:'Bins are separated into PET Bottles, Assorted Glass, Cans, and Burnable Trash. Once a bin is full, please take it to the corresponding can outside: the trashmen will dispose of whatever is in the can on pickup day!'
   }
 ]
 
@@ -77,12 +77,12 @@ pictures = [
 
 
 bios = [
-  "Hi, I'm Rich, from Philadelphia. I’ve been learning Japanese for 2 years. I was working as a dentist in my home town. One of my hobbies is watching movies.",
-  "Hey, I'm Will, from San francisco. I’ve been learning Japanese for 30 days . I was working as a office worker in Paris. I enjoy listening to music.",
-  "My name is Arnaud, from France. I’ve been learning English for 30 days .I am an Japanese teacher. One of my hobbies is cooking ",
-  "Natalia, from Brazil. I’ve been learning Japanese for 5 weeks .I am a student. I enjoy listening to music.",
-  "Hi, I'm Douglas. I'm a doctor. One of my hobbies is going to restaurants.",
-  "Trouni! I’m from France. I was working as a English teacher in my home town. One of my hobbies is cooking chocolatine.",
+  "Hi, I'm Rich, from Philadelphia. I’ve been living in Japan for 2 years. I was working as a dentist in my hometown. I like watching movies.",
+  "Hey, I'm Will, from San Francisco. I was working as an office worker in Paris. I enjoy listening to music.",
+  "My name is Arnaud, from France. I’ve been learning English for 30 days. I am a Japanese teacher. I love to cook.",
+  "Natalia, from Brazil. I’ve been learning Japanese for 5 weeks. I am a student. I enjoy listening to music.",
+  "Hi, I'm Douglas. I'm a doctor. I like to DAAAANCE",
+  "Trouni! I’m from France. I was working as an English teacher in my hometown. One of my hobbies is cooking chocolatine.",
 ]
 
 amenities = [
