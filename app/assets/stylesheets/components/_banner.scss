@@ -18,15 +18,16 @@
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), asset-url("banner-2.jpg");
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
   height: 50vh;
   color: #FFFFEA;
   text-align: center;
 }
 
 .show-banner p {
+  margin-top: 10px;
   display: flex-inline;
-  font-size: 30px;
+  font-family: Nunito, Helvetica, sans-sarif;
+  font-size: 20px;
   color: #FFFFEA;
   text-align: center;
 }
