@@ -1,13 +1,20 @@
 class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
+    @amenity = Amenity.find(params[:amenity_id])
     @booking.room = current_user.room
-    @booking.amenity = Amenity.find(params[:amenity_id])
+    @booking.amenity = @amenity
     if @booking.save
-      redirect_to my_house_path, notice: "Successfully Booked #{@booking.amenity.name}"
+      respond_to do |format|
+        format.html { redirect_to my_house_path, notice: "Successfully Booked #{@booking.amenity.name}" }
+        format.js
+      end
     else
       @amenities = Amenity.all
-      render "amenities/index"
+      respond_to do |format|
+        format.html { render "amenities/index" }
+        format.js
+      end
     end
   end
 
@@ -15,4 +22,5 @@ class BookingsController < ApplicationController
   def booking_params
     params.require(:booking).permit(:start_date, :end_date)
   end
+
 end

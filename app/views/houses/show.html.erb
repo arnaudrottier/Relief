@@ -5,9 +5,9 @@
  -->    <div class="show-banner d-flex flex-column justify-content-center">
       <div class="meguro-container d-flex justify-content-end pr-2">
         <p>
-          <% if Time.now >= Time.parse("0:01") && Time.now <= Time.parse("12:00") %>
+          <% if Time.zone.now >= Time.zone.parse("0:01") && Time.zone.now <= Time.zone.parse("12:00") %>
             <i class="fas fa-coffee mr-2" style="color:#4B371B"></i>Good Morning, <%= current_user.first_name %>
-          <% elsif Time.now >= Time.parse("12:01") && Time.now <= Time.parse("17:00") %>
+          <% elsif Time.zone.now >= Time.zone.parse("12:01") && Time.zone.now <= Time.zone.parse("17:00") %>
             <i class="fas fa-sun mr-2" style="color:#f9cd1b"></i>Good Afternoon, <%= current_user.first_name %>
           <% else %>
             <i class="fas fa-cloud-moon mr-2"></i>Good Evening, <%= current_user.first_name %>
@@ -75,14 +75,12 @@
                   <p class="mr-3"><strong>Last Week:</strong></p>
                    <% if @previous_room_chore.status %>
                     <p class="mr-3"><%= @previous_room_chore.chore.name %>
-                      <i class="fas fa-check mr-2" style="color:#1EDD88;"></i>
+                      <i class="far fa-check-circle mr-2" style="color:#1EDD88;"></i>
                     </p>
-                   <p><small class="mr-3">10 pts earned</small></p>
                    <% else %>
                    <p class="mr-3"><%= @previous_room_chore.chore.name %>
-                    <i class="far fa-square mr-2" style="color:#FD1015;"></i>
+                    <i class="far fa-circle mr-2" style="color:#FD1015;"></i>
                   </p>
-                   <p><small class="mr-3">0 pts earned</small></p>
                    <% end %>
                 </div>
               </a>
@@ -95,11 +93,9 @@
                   <div class="this-week-info">
                     <%= @current_room_chore.chore.name %>
                     <% if @current_room_chore.status %>
-                      <i class="fas fa-check mr-2" style="color:#1EDD88;"></i>
-                      <p><small class="mr-3">10 pts earned</small></p>
+                      <i class="far fa-check-circle mr-2" style="color:#1EDD88;"></i>
                     <% else %>
-                      <i class="far fa-square mr-2" style="color:#FD1015;"></i>
-                      <p><small class="mr-3">0 pts earned</small></p>
+                      <i class="far fa-circle mr-2" style="color:#FD1015;"></i>
                     <% end %>
                   </div>
                 </div>
@@ -112,14 +108,12 @@
                   <p class="mr-3"><strong>Next Week:</strong></p>
                   <% if @next_room_chore.status %>
                     <p class='mr-3'><%= @next_room_chore.chore.name %>
-                      <i class="fas fa-check mr-2" style="color:#1EDD88;"></i>
+                      <i class="far fa-check-circle mr-2" style="color:#1EDD88;"></i>
                     </p>
-                    <p><small class="mr-3">10 pts earned</small></p>
-                  <% else %>
+                   <% else %>
                   <p class="mr-3"><%= @next_room_chore.chore.name %>
-                    <i class="far fa-square mr-2" style="color:#FD1015;"></i>
+                    <i class="far fa-circle mr-2" style="color:#FD1015;"></i>
                   </p>
-                    <p><small class="mr-3">0 pts earned</small></p>
                   <% end %>
                 </div>
               </a>
