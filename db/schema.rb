@@ -73,6 +73,11 @@ ActiveRecord::Schema.define(version: 2020_03_12_025019) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "countries", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "merit_actions", force: :cascade do |t|
     t.integer "user_id"
     t.string "action_method"
