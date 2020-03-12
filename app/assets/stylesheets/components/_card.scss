@@ -26,18 +26,18 @@
   background: #F2F2F2;
 }
 
-h2 {		
- }		
+h2 {
+ }
 
-  h3 {		
-   margin: 0;		
-   color: #FFFFEA;		
-   font-family: 'Nova Square', cursive;		
- }		
+  h3 {
+   margin: 0;
+   color: #FFFFEA;
+   font-family: 'Nova Square', cursive;
+ }
 
- 
-  h4 {		
-   margin: 0;		
+
+  h4 {
+   margin: 0;
  }
 
 .card-profile-avatar {
@@ -92,6 +92,13 @@ height:50px;
   box-shadow: 10px;
 }
 
+.amenity-card {
+  border-radius: 30px;
+  background: linear-gradient(145deg, #d2d4d5, #f9fdfe);
+  box-shadow:  10px 10px 30px #c6c9c9,
+               -10px -10px 30px #ffffff;
+}
+
 .card-meguro-profile {
 width: 300px;
 margin-left: 150px;
@@ -104,3 +111,24 @@ grid-template-columns: 1fr 1fr 1fr;
 grid-gap: 16px;
 }
 
+.other-week {
+  border-radius: 30px;
+  background: linear-gradient(145deg, #d2d4d5, #f9fdfe);
+  box-shadow:  10px 10px 30px #c6c9c9,
+               -10px -10px 30px #ffffff;
+}
+
+.this-week {
+  border-radius: 30px;
+  background: linear-gradient(145deg, #d2d4d5, #f9fdfe);
+  box-shadow:  10px 10px 30px #c6c9c9,
+               -10px -10px 30px #ffffff;
+}
+
+a.card-link {
+  text-decoration: none;
+  color: black;
+  a.card-link {
+    color: inherit;
+  }
+}
