@@ -4,6 +4,7 @@ class User < ApplicationRecord
   belongs_to :room, required: false
   has_many :room_chores, through: :room
   has_many :whiteboard_messages
+  has_many :bookings, through: :room
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable,

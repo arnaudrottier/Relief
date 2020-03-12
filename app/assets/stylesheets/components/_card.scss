@@ -26,18 +26,18 @@
   background: #F2F2F2;
 }
 
-h2 {		
- }		
+h2 {
+ }
 
-  h3 {		
-   margin: 0;		
-   color: #FFFFEA;		
-   font-family: 'Nova Square', cursive;		
- }		
+  h3 {
+   margin: 0;
+   color: #FFFFEA;
+   font-family: 'Nova Square', cursive;
+ }
 
- 
-  h4 {		
-   margin: 0;		
+
+  h4 {
+   margin: 0;
  }
 
 .card-profile-avatar {
@@ -53,11 +53,13 @@ h2 {
 }
 
 .card-bio {
+  background: #ffffff;
+  box-shadow:  -5px -5px 26px #e3e3e3,
+                5px 5px 26px #ffffff;
   padding: 40px 50px 30px 60px;
   margin-left: 130px;
   width: 500px;
   height: 200px;
-  box-shadow: 0 0px 15px rgba(0,0,0,0.1);
 }
 .card-key-icon img {
 width: 50px;
@@ -73,7 +75,6 @@ height:50px;
   background: #1871BF;
   display: flex;
   justify-content: center;
-  width: 700px;
   height: 70px;
   padding-top: 20px;
 }
@@ -92,15 +93,31 @@ height:50px;
   box-shadow: 10px;
 }
 
-.card-meguro-profile {
-width: 300px;
-margin-left: 150px;
-
-}
-
 .card-amenity-icon {
 display: grid;
 grid-template-columns: 1fr 1fr 1fr;
 grid-gap: 16px;
 }
 
+.amenity-grid-in-profile {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  box-shadow: 10px;
+}
+
+.fa-envelope {
+width: 40px;
+}
+.booking-profile {
+  padding-top:25px;
+}
+
+.card-contact-profile {
+  background: #ffffff;
+  box-shadow:  -5px -5px 26px #e3e3e3,
+                5px 5px 26px #ffffff;
+  padding: 40px 50px 30px 60px;
+  width: 400px;
+  height: 200px;
+  margin-left: 100px;
+}

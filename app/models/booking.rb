@@ -9,15 +9,15 @@ class Booking < ApplicationRecord
   end
 
   def formatted_end_date
-    end_date.strftime("%b %d")
+    end_date.strftime("%d")
   end
 
   def formatted_start_time
-    start_date.strftime("%H:%M")
+    start_date.strftime("%l:%M %p")
   end
 
   def formatted_end_time
-    end_date.strftime("%H:%M")
+    end_date.strftime(" %l:%M %p")
   end
 
 
