@@ -4,6 +4,11 @@
       <div type="button" class="btn amenity-card mr-3 border" data-toggle="modal" data-target="#amenityModal-<%= amenity.id %>">
         <p><%= image_tag amenity.fa_class, width: 100 %></p>
         <small><p><%= amenity.name %></small></p>
+        <% if amenity.next_booking %>
+        <p>Next Booked: <%= amenity.next_booking.start_date.strftime("%b %e, %l:%M %p") %><p>
+        <% else  %>
+          <p>Book now</p>
+        <% end %>
       </div>
 
     </div>
