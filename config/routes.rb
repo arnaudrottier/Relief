@@ -10,7 +10,7 @@ resources :chores, only: [:index]
 resources :amenities, only: [:index] do
   resources :bookings, only: [:new, :create, :destroy]
 end
-
+post 'line/webhook', to: "line/bot#recieve"
 
 # namespace :admin do
   # resources :chores
