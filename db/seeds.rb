@@ -149,14 +149,21 @@ end
 
 6.times do |n|
   Chore.all.each_with_index do |chore, index|
-
+    status =
+      if n > 1
+        false
+      elsif n < 1
+        true
+      else
+        [true, false].sample
+      end
     room_chore = RoomChore.new(
       start_date: Date.new(2020,3,9),
       end_date: Date.new(2020,3,15),
       chore: chore,
       period: Period.convert_to_period(Date.today + (n - 1).weeks),
       room: Room.all[(index + n) % Room.count],
-      status: [true, false].sample
+      status: status
     )
 
     room_chore.save!

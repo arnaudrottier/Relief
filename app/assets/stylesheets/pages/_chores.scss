@@ -1,25 +1,17 @@
 .other-week {
-  display: flex;
-  font-weight: lighter;
-  background-color: floralwhite;
-  justify-content: center;
-  align-items: center;
-  margin: 20px 0px;
-  opacity: 0.6;
-  p {
-    margin: 0;
-  }
+  border-radius: 30px;
+  background: linear-gradient(145deg, #d2d4d5, #f9fdfe);
+  box-shadow:  10px 10px 30px #c6c9c9,
+               -10px -10px 30px #ffffff;
 }
 
 .this-week {
-  display: flex;
-  flex-direction: column;
-  font-weight: bolder;
-  justify-content: center;
-   background-color: floralwhite;
-  align-items: center;
-  }
-  .this-week-info{
+  border-radius: 30px;
+  background: linear-gradient(145deg, #d2d4d5, #f9fdfe);
+  box-shadow:  10px 10px 30px #c6c9c9,
+               -10px -10px 30px #ffffff;
+}
+.this-week-info{
 
 }
 
