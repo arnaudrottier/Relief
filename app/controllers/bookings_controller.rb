@@ -4,7 +4,7 @@ class BookingsController < ApplicationController
     @booking.room = current_user.room
     @booking.amenity = Amenity.find(params[:amenity_id])
     if @booking.save
-      redirect_to my_house_path
+      redirect_to my_house_path, notice: "Successfully Booked #{@booking.amenity.name}"
     else
       @amenities = Amenity.all
       render "amenities/index"

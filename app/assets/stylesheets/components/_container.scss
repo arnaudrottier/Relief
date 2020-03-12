@@ -9,11 +9,11 @@ background-color: white;
 }
 
 .meguro-container {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    font-size: 30px;
-    color: #FFFFEA;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  font-size: 30px;
+  color: #FFFFEA;
 }
 
 .meguro-div {
@@ -21,7 +21,7 @@ background-color: white;
 }
 
 .house-members-container {
-  position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  width: 80vw;
 }
