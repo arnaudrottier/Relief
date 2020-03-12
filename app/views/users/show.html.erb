@@ -1,9 +1,11 @@
 <div class="d-flex aling-content-between" >
 
   <div class="card-profile-avatar my-5">
+    <% if @user == current_user %>
     <%= link_to edit_user_path do %>
-         <%= image_tag "pencil.png", alt: "alttext", class: "card-profile-edit"  %>
+         <i class="fas fa-pencil-alt fa-2x card-profile-edit"></i>
         <% end %>
+    <% end %>
     <div class="d-flex justify-content-center m-3">
       <%= cl_image_tag(@user.image.key, :gravity => :face, class: :avatarlarge ) %>
     </div>
