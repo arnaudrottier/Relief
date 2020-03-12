@@ -5,10 +5,10 @@
   <% @rooms.each do |room| %>
     <!-- if we want to put a marker in the box -->
     <% if room == room_chore.room %>
-      <td>
+      <td style="text-align: center;">
         <% if room_chore.user == current_user && room_chore.status %>
           <!-- if chore_room belongs to user && if the chore is completed -->
-          <%= button_tag type: 'button' do %>
+          <%= button_tag type: 'button', style: 'border: none;background-color: transparent' do %>
           <%#= link_to edit_room_chore_path(room_chore) do %>
             <i class="far fa-check-circle d-flex justify-content-center" data-toggle='modal' data-target="#room-chore-<%= room_chore.id %>"></i>
           <% end %>
@@ -17,7 +17,7 @@
          <i class="far fa-check-circle d-flex justify-content-center"></i>
         <% elsif room_chore.user == current_user %>
           <!-- if chore_room belongs to user && if the chore is NOT completed -->
-          <%= button_tag type: 'button' do %>
+          <%= button_tag type: 'button', style: 'border: none;background-color: transparent' do %>
           <%#= link_to edit_room_chore_path(room_chore) do %>
             <i class="far fa-circle d-flex justify-content-center" data-toggle='modal' data-target="#room-chore-<%= room_chore.id %>"></i>
           <% end %>
