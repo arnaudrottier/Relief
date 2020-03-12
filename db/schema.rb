@@ -164,7 +164,6 @@ ActiveRecord::Schema.define(version: 2020_03_12_104201) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookings", "amenities"
   add_foreign_key "bookings", "rooms"
-  add_foreign_key "profile", "rooms"
   add_foreign_key "room_chores", "chores"
   add_foreign_key "room_chores", "rooms"
   add_foreign_key "users", "rooms"
