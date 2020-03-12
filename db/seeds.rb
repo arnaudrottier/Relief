@@ -48,10 +48,10 @@ chores = [
 ]
 
 emails = [
-  "rich@gmail.com",
-  "will@gmail.com",
-  "arnaud@gmail.com",
-  "natalia@gmail.com",
+  "rich.lynch@gmail.com",
+  "will.nunn@gmail.com",
+  "arnaud.rottier@gmail.com",
+  "natalia.takahara@gmail.com",
   "dougiefresh@gmail.com",
   "tmoney@gmail.com",
 ]
@@ -136,6 +136,7 @@ chores.each_with_index do |chore, index|
     password: "123456",
     room: new_room,
     bio: bios[index],
+    created_at: Faker::Time.between(from: DateTime.now - 600 , to: DateTime.now - 30)
   )
   user.save!
   user.add_points(rand(10)*10, category: 'room_chore_activity')
