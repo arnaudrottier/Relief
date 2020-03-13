@@ -14,6 +14,12 @@ class Line::BotController < ApplicationController
     end
 
     events = @client.parse_events_from(body)
+    puts events
+    puts events.first
+    puts events.first.source
+    puts events.first.source['type']
+    puts params
+    puts params['events']
     if events.first.source['type'] == 'user'
       events.each do |event|
         case event
