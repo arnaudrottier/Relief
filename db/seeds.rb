@@ -77,7 +77,7 @@ pictures = [
 
 
 bios = [
-  "Hi, I'm Rich, from Philadelphia. I’ve been living in Japan for 2 years. I was working as a dentist in my hometown. I like watching movies.",
+  "Hi, I'm Rich, from Philadelphia. I’ve been living in Japan for 2 years. I was working as a dentist in my hometown but now work as yoga teacher. I like watching movies.",
   "Hey, I'm Will, from San Francisco. I was working as an office worker in Paris. I enjoy listening to music.",
   "My name is Arnaud, from France. I’ve been learning English for 30 days. I am a Japanese teacher. I love to cook.",
   "Natalia, from Brazil. I’ve been learning Japanese for 5 weeks. I am a student. I enjoy listening to music.",
