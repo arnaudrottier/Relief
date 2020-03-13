@@ -10,20 +10,20 @@
           <!-- if chore_room belongs to user && if the chore is completed -->
           <%= button_tag type: 'button', style: 'border: none;background-color: transparent' do %>
           <%#= link_to edit_room_chore_path(room_chore) do %>
-            <i class="far fa-check-circle d-flex justify-content-center" data-toggle='modal' data-target="#room-chore-<%= room_chore.id %>" style="color:#1EDD88;"></i>
+            <i class="far fa-check-circle d-flex justify-content-center" data-toggle='modal' data-target="#room-chore-<%= room_chore.id %>" style="font-size: 32px; color:#1EDD88;"></i>
           <% end %>
         <% elsif room_chore.status %>
           <!-- if the chore is completed -->
-         <i class="far fa-check-circle d-flex justify-content-center" style="color:#1EDD88;"></i>
+         <i class="far fa-check-circle d-flex justify-content-center" style="font-size: 32px; color:#1EDD88;"></i>
         <% elsif room_chore.user == current_user %>
           <!-- if chore_room belongs to user && if the chore is NOT completed -->
           <%= button_tag type: 'button', style: 'border: none;background-color: transparent' do %>
           <%#= link_to edit_room_chore_path(room_chore) do %>
-            <i class="far fa-circle d-flex justify-content-center" data-toggle='modal' data-target="#room-chore-<%= room_chore.id %>" style="color:#FD1015;"></i>
+            <i class="far fa-circle d-flex justify-content-center" data-toggle='modal' data-target="#room-chore-<%= room_chore.id %>" style="font-size: 32px; color:#FD1015;"></i>
           <% end %>
         <% else %>
           <!-- if the chore is NOT completed -->
-          <i class="far fa-circle d-flex justify-content-center" style="color:#FD1015;"></i>
+          <i class="far fa-circle d-flex justify-content-center" style="font-size: 32px; color:#FD1015;"></i>
         <% end %>
       </td>
     <% else  %>
