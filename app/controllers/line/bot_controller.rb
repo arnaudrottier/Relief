@@ -19,8 +19,8 @@ class Line::BotController < ApplicationController
     puts events.first.source
     puts events.first.source['type']
     puts params
-    puts params['events']
-    if events.first.source['type'] == 'user'
+    puts params['events'].first['source']['type']
+    if params['events'].first['source']['type'] == 'user'
       events.each do |event|
         case event
         when Line::Bot::Event::Message
