@@ -37,7 +37,7 @@
     <div class="card-profile">
       <h3 class="card-profile-title">Booked Amenities</h3>
       <div class="m-5">
-        <% @user.bookings.each do |booking| %>
+        <% @user.bookings.booking_from_today.each do |booking| %>
           <div class="d-flex">
             <div class="card-profile-amenity">
               <p class="d-flex justify-content-center mt-3"><%= image_tag booking.amenity.fa_class, width: 50 %></p>
