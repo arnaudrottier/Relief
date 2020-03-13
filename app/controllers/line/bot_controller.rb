@@ -14,7 +14,7 @@ class Line::BotController < ApplicationController
     end
 
     events = @client.parse_events_from(body)
-    if params['events'].first['source']['type'] == 'user'
+    if params['events'].first['source']['type'] == 'user' || params['events'].first['message']['text'].strip.match(/.*@bot.*/i)
       events.each do |event|
         case event
         when Line::Bot::Event::Message
