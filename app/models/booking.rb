@@ -3,6 +3,7 @@ class Booking < ApplicationRecord
   belongs_to :amenity
   validates :start_date, presence: true
   validates :end_date, presence: true
+  default_scope { order(start_date: :desc) }
 
   def formatted_start_date
     start_date.strftime("%b %d")
@@ -19,7 +20,6 @@ class Booking < ApplicationRecord
   def formatted_end_time
     end_date.strftime(" %l:%M %p")
   end
-
 
 end
 
