@@ -1,39 +1,47 @@
 <div class="container-fluid" style="padding: 0 0;">
   <div class="meguro-div">
     <!-- Button trigger modal -->
-    <button style="position: absolute;bottom: 0; right: 0; font-size: 36px;" data-toggle="modal" data-target="#lineModal"><i class="fab fa-line" style="color:green"></i></button>
-    <div class="meguro-container d-flex justify-content-end pr-2"><i class="fas fa-igloo mr-2"></i><p>Meguro Mansion</p></div>
-    <div class="show-banner">
-      <div class="col-12 text-center">
-        <h2>
-          <% if Time.now >= Time.parse("0:01") && Time.now <= Time.parse("12:00") %>
-            <i class="fas fa-coffee mr-2"></i>Good Morning, <%= current_user.first_name %>
-          <% elsif Time.now >= Time.parse("12:01") && Time.now <= Time.parse("17:00") %>
-            <i class="fas fa-sun mr-2"></i>Good Afternoon, <%= current_user.first_name %>
+<!--     <button style="position: absolute;bottom: 0; right: 0; font-size: 36px;" data-toggle="modal" data-target="#lineModal"><i class="fab fa-line" style="color:green"></i></button>
+ -->    <div class="show-banner d-flex flex-column justify-content-center">
+      <div class="meguro-container d-flex justify-content-end pr-2">
+        <p>
+          <% if Time.zone.now >= Time.zone.parse("0:01") && Time.zone.now <= Time.zone.parse("12:00") %>
+            <i class="fas fa-coffee mr-2" style="color:#4B371B"></i>Good Morning, <%= current_user.first_name %>
+          <% elsif Time.zone.now >= Time.zone.parse("12:01") && Time.zone.now <= Time.zone.parse("17:00") %>
+            <i class="fas fa-sun mr-2" style="color:#f9cd1b"></i>Good Afternoon, <%= current_user.first_name %>
           <% else %>
             <i class="fas fa-cloud-moon mr-2"></i>Good Evening, <%= current_user.first_name %>
           <% end %>
-        </h2>
+        </p>
+      </div>
+      <div class='mb-4'>
+        <h2 style="font-family: Nova Square; font-size: 48px;">Meguro Mansion</h2>
+      </div>
+      <div class="house-members-container container-fluid">
+        <% @users.each do |user| %>
+          <div class="d-flex flex-column text-center mt-5">
+            <%= link_to user_path(user), class: "avatar-opacity" do  %>
+              <i><%= cl_image_tag user.image.key, class: "avatarmem" %></i>
+              <div class="member-name my-2">
+                <%= user.first_name %>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
 
-<div class="members-header text-center mt-4">
-  <h2>Mansioners</h2>
-</div>
-
-<div class="house-members-container container">
-  <% @users.each do |user| %>
-    <div class="d-flex flex-column text-center mt-5">
-      <%= link_to user_path(user) do  %>
-        <i><%= cl_image_tag user.image.key, class: :avatarlg %></i>
-      <% end %>
-      <div class="member-name my-2">
-        <%= user.first_name %>
-      </div>
+  <% unless current_user.onboarded %>
+    <div class="line-onboarding container-fluid animated fadeIn">
+      Welcome <%= current_user.first_name %> to Meguro Mansion! Don't forget to <a class="btn btn-outline-light" data-toggle="modal" data-target="#lineModal">JOIN</a> the house line group 😎.
     </div>
   <% end %>
-</div>
+
+<!-- <div class="members-header text-center mt-4">
+  <h2>Mansioners</h2>
+</div> -->
+
 
 <div class="container mt-5">
 
@@ -63,18 +71,16 @@
           <div class="d-flex justify-content-around">
             <div>
               <a href="chores" class="card-link">
-                <div class="other-week border p-3 d-flex flex-column">
+                <div class="other-week border p-3 d-flex flex-column" style="color: black;">
                   <p class="mr-3"><strong>Last Week:</strong></p>
                    <% if @previous_room_chore.status %>
                     <p class="mr-3"><%= @previous_room_chore.chore.name %>
-                      <i class="fas fa-check mr-2" style="color:#1EDD88;"></i>
+                      <i class="far fa-check-circle mr-2" style="color:#1EDD88;"></i>
                     </p>
-                   <p><small class="mr-3">10 pts earned</small></p>
                    <% else %>
                    <p class="mr-3"><%= @previous_room_chore.chore.name %>
-                    <i class="far fa-square mr-2" style="color:#FD1015;"></i>
+                    <i class="far fa-circle mr-2" style="color:#FD1015;"></i>
                   </p>
-                   <p><small class="mr-3">0 pts earned</small></p>
                    <% end %>
                 </div>
               </a>
@@ -82,16 +88,14 @@
 
             <div>
               <a href="chores" class="card-link">
-                <div class="this-week border p-3 d-flex flex-column justify-content-around" style='height: 100%;'>
+                <div class="this-week border p-3 d-flex flex-column justify-content-around" style='color: black; height: 100%;'>
                   <h4><%= @current_room_chore.formatted_start_date %> - <%= @current_room_chore.formatted_end_date %></h4>
                   <div class="this-week-info">
                     <%= @current_room_chore.chore.name %>
                     <% if @current_room_chore.status %>
-                      <i class="fas fa-check mr-2" style="color:#1EDD88;"></i>
-                      <p><small class="mr-3">10 pts earned</small></p>
+                      <i class="far fa-check-circle mr-2" style="color:#1EDD88;"></i>
                     <% else %>
-                      <i class="far fa-square mr-2" style="color:#FD1015;"></i>
-                      <p><small class="mr-3">0 pts earned</small></p>
+                      <i class="far fa-circle mr-2" style="color:#FD1015;"></i>
                     <% end %>
                   </div>
                 </div>
@@ -100,18 +104,16 @@
 
             <div>
               <a href="chores" class="card-link">
-                <div class="other-week border p-3 d-flex flex-column">
+                <div class="other-week border p-3 d-flex flex-column" style="color: black;">
                   <p class="mr-3"><strong>Next Week:</strong></p>
                   <% if @next_room_chore.status %>
                     <p class='mr-3'><%= @next_room_chore.chore.name %>
-                      <i class="fas fa-check mr-2" style="color:#1EDD88;"></i>
+                      <i class="far fa-check-circle mr-2" style="color:#1EDD88;"></i>
                     </p>
-                    <p><small class="mr-3">10 pts earned</small></p>
-                  <% else %>
+                   <% else %>
                   <p class="mr-3"><%= @next_room_chore.chore.name %>
-                    <i class="far fa-square mr-2" style="color:#FD1015;"></i>
+                    <i class="far fa-circle mr-2" style="color:#FD1015;"></i>
                   </p>
-                    <p><small class="mr-3">0 pts earned</small></p>
                   <% end %>
                 </div>
               </a>
@@ -161,8 +163,10 @@
         </button>
       </div>
       <div class="modal-body">
-        <%= image_tag "lineqr.png", alt: "alttext", style: "width: 100%" %>
+        <%= image_tag "Group-QR.jpg", alt: "alttext", style: "width: 100%" %>
       </div>
     </div>
   </div>
+  <%= simple_form_for :onboard, url: onboard_path, remote: true, method: :get, id: "submit-onboard" do |f| %>
+  <% end %>
 </div>

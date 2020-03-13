@@ -10,7 +10,14 @@ $('.popover-dismiss').popover({
 })
 
 let card = document.querySelector('.card-profile');
-card.addEventListener( 'click', function() {
-  card.classList.toggle('is-flipped');
-});
+if (card) {
+  card.addEventListener( 'click', function() {
+    card.classList.toggle('is-flipped');
+  });
+};
 
+if (document.querySelector("#lineModal")) {
+  document.querySelector("#lineModal").addEventListener("click", () => {
+    document.querySelector('.onboard.simple_form').submit()
+  })
+};

@@ -1,50 +1,62 @@
 <div class="d-flex aling-content-between" >
-  <div class="card-profile-avatar">
-    <div class="d-flex justify-content-center mt-5"><a><%= cl_image_tag(@user.image.key, :gravity => :face, class: :avatarlarge ) %></a></div>
-    <div class="d-flex justify-content-center">
-    <div class="align-self-end pt-2"><h1 style="color: #1871BF;"><%= @user.first_name %></h1></div>
-      <% if @user == current_user %>
-        <%= link_to edit_user_path do %>
-          <i class="fas fa-pencil-alt fa-1x ml-2"></i>
+
+  <div class="card-profile-avatar my-5">
+    <% if @user == current_user %>
+    <%= link_to edit_user_path do %>
+         <i class="fas fa-pencil-alt fa-2x card-profile-edit"></i>
         <% end %>
-      <% end %>
+    <% end %>
+    <div class="d-flex justify-content-center m-3">
+      <%= cl_image_tag(@user.image.key, :gravity => :face, class: :avatarlarge ) %>
     </div>
-      <div class="d-flex justify-content-center">
-        <a class="card-key-icon "><%= image_tag "room-key.png", alt: "alttext", class: "card-key-icon"  %></a>
-        <p class="align-self-end my-3" style="font-size: 25px;"><%= @user.room.number %> | Points: <%= @user.points %></p>
+    <div class="d-flex justify-content-center">
+      <h1 class="card-profile-name"><%= @user.first_name %></h1>
+    </div>
+      <div class="d-flex justify-content-center align-items-center">
+        <%= image_tag "room-key.png", alt: "alttext", class: "card-key-icon mr-3" %><p style=" font-size: 32px;"><%= @user.room.number %></p>
       </div>
       <div class="card-contact-profile">
-        <div class="card-meguro-profile border-top border-bottom">
-          <p class="text-center"style="font-size: 20px; margin: 0;">At Meguro Mansion since: </p>
-          <p class="text-center"style="font-size: 20px;"> <%= @user.formatted_created_day %> </p>
+        <div class="border-bottom">
+          <p class="text-center mt-3"style=" margin: 0;">At Meguro Mansion since: </p>
+          <p class="text-center"> <%= @user.formatted_created_day %> </p>
         </div>
-        <div class="d-flex justify-content-center mt-4" style="color: gray;">
-          <i class="fas fa-envelope fa-2x"></i>
-          <p style="margin-bottom: 0;" class="align-self-end">E-mail: <%= @user.email %></p>
+        <div class="d-flex justify-content-center align-items-center my-3">
+          <p class="align-items-center d-flex mb-3"> <%= image_tag "email.png", alt: "alttext", class: "card-key-icon" %><span class="ml-3"><%= @user.email %></span></p>
         </div>
       </div>
   </div>
-  <div class="card-profile-right" style="background-color: white;">
-    <h3 class="card-amenity-profile mb-4">About me</h3>
-    <div class="card-bio">
-      <p style="color: gray;"><%= @user.bio %></p>
+  <div class="card-profile-right">
+
+    <div class="card-profile">
+      <h3 class="card-profile-title">About me</h3>
+      <div class="card-bio">
+        <p><%= @user.bio %></p>
+      </div>
     </div>
-    <div style="margin-top: 50px; width: 600px;margin-left: 80px;"></div>
-    <div>
-    <h3 class="card-amenity-profile">Booked Amenities</h3>
-      <div class="amenity-grid-in-profile container">
+
+    <div class="card-profile">
+      <h3 class="card-profile-title">Booked Amenities</h3>
+      <div class="m-5">
         <% @user.bookings.each do |booking| %>
-        <div>
-          <p class="d-flex justify-content-center mt-3"><%= image_tag booking.amenity.fa_class, width: 50 %></p>
-          <small><p class="d-flex justify-content-center"><%= booking.amenity.name %></small></p>
-        </div>
-        <div>
-          <p class="booking-profile"style="margin-bottom: 0;"><i class="fas fa-calendar-day"></i> <%= booking.formatted_start_date %> to <%= booking.formatted_end_date %></p>
-          <p class="booking-profile border-bottom"style="margin-bottom: 0;"><i class="far fa-clock align-self-end"></i><%= booking.formatted_start_time %> - <%= booking.formatted_end_time %></p>
-        </div>
+          <div class="d-flex">
+            <div class="card-profile-amenity">
+              <p class="d-flex justify-content-center mt-3"><%= image_tag booking.amenity.fa_class, width: 50 %></p>
+              <p class="d-flex justify-content-center"><%= booking.amenity.name %></p>
+            </div>
+            <div>
+              <% if booking.formatted_start_date[-2..-1] == booking.formatted_end_date %>
+                <p class="booking-profile"style="margin-bottom: 0"><i class="fas fa-calendar-day"></i> <%= booking.formatted_start_date %></p>
+                <p class="booking-profile border-bottom"style="margin-bottom: 0;"><i class="far fa-clock align-self-end"></i><%= booking.formatted_start_time %> - <%= booking.formatted_end_time %></p>
+              <% else %>
+                <p class="booking-profile"style="margin-bottom: 0;"><i class="fas fa-calendar-day"></i> <%= booking.formatted_start_date %> to <%= booking.formatted_end_date %></p>
+                <p class="booking-profile border-bottom"style="margin-bottom: 0;"><i class="far fa-clock align-self-end"></i><%= booking.formatted_start_time %> - <%= booking.formatted_end_time %></p>
+              <% end %>
+            </div>
+          </div>
         <% end %>
       </div>
     </div>
+
   </div>
 </div>
 

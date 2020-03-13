@@ -9,7 +9,7 @@ require 'faker'
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-puts "Destroying Users, Rooms, Chores and Amenities"
+puts "Destroying Users, Rooms, Chores, Bookings and Amenities"
 Booking.destroy_all
 WhiteboardMessage.destroy_all
 User.destroy_all
@@ -17,7 +17,7 @@ Room.destroy_all
 RoomChore.destroy_all
 Chore.destroy_all
 Amenity.destroy_all
-puts "Destroyed Users, Rooms, Chores and Amenities"
+puts "Destroyed Users, Rooms, Chores, Bookings and Amenities"
 
 
 chores = [
@@ -48,10 +48,10 @@ chores = [
 ]
 
 emails = [
-  "rich@gmail.com",
-  "will@gmail.com",
-  "arnaud@gmail.com",
-  "natalia@gmail.com",
+  "rich.lynch@gmail.com",
+  "will.nunn@gmail.com",
+  "arnaud.rottier@gmail.com",
+  "natalia.takahara@gmail.com",
   "dougiefresh@gmail.com",
   "tmoney@gmail.com",
 ]
@@ -77,7 +77,7 @@ pictures = [
 
 
 bios = [
-  "Hi, I'm Rich, from Philadelphia. I’ve been living in Japan for 2 years. I was working as a dentist in my hometown. I like watching movies.",
+  "Hi, I'm Rich, from Philadelphia. I’ve been living in Japan for 2 years. I was working as a dentist in my hometown but now work as yoga teacher. I like watching movies.",
   "Hey, I'm Will, from San Francisco. I was working as an office worker in Paris. I enjoy listening to music.",
   "My name is Arnaud, from France. I’ve been learning English for 30 days. I am a Japanese teacher. I love to cook.",
   "Natalia, from Brazil. I’ve been learning Japanese for 5 weeks. I am a student. I enjoy listening to music.",
@@ -136,6 +136,7 @@ chores.each_with_index do |chore, index|
     password: "123456",
     room: new_room,
     bio: bios[index],
+    created_at: Faker::Time.between(from: DateTime.now - 600 , to: DateTime.now - 30)
   )
   user.save!
   user.add_points(rand(10)*10, category: 'room_chore_activity')
@@ -153,7 +154,7 @@ end
       if n > 1
         false
       elsif n < 1
-        true
+        false
       else
         [true, false].sample
       end

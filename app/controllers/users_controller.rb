@@ -17,9 +17,17 @@ class UsersController < ApplicationController
 
   end
 
+  def onboard
+    current_user.update(onboarded: true)
+    respond_to do |format|
+      format.html { redirect_to my_house_path }
+      format.js
+    end
+  end
+
   private
 
   def params_user
-    params.require(:user).permit(:first_name, :last_name, :photo, :bio, :email)
+    params.require(:user).permit(:first_name, :last_name, :image, :bio, :email)
   end
 end
